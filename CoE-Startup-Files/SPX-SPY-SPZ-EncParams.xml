@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<EtherCATMailbox><CoE><InitCmds><InitCmd><Transition>PS</Transition><Timeout>0</Timeout><Ccs>1</Ccs><Index>61570</Index><SubIndex>1</SubIndex><Data>00</Data></InitCmd><InitCmd><Transition>PS</Transition><Comment><![CDATA[SubIndex 001]]></Comment><Timeout>0</Timeout><Ccs>1</Ccs><Index>4113</Index><SubIndex>1</SubIndex><Data>6c6f6164</Data></InitCmd></InitCmds></CoE></EtherCATMailbox>

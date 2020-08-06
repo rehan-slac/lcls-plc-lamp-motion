@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="Main" Id="{6f4a6b61-6bc5-4c57-90c1-877a33915112}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Main
+VAR
+	// Motors
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetX-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[GasJetX-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:01
+	'}
+	M1		: DUT_MotionStage; // Gas Jet X
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:02
+	'}
+	M2		: DUT_MotionStage; // Gas Jet Y
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetZ-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[GasJetZ-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:03
+	'}
+	M3		: DUT_MotionStage; // Gas Jet Z
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleX-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[GasNeedleX-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:04
+	'}
+	M4	    : DUT_MotionStage; // Gas Needle X
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:05
+	'}
+	M5	    : DUT_MotionStage; // Gas Needle Y
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:06
+	'}
+	M6	    : DUT_MotionStage; // Gas Needle Z
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddleXY-EL1084]^Channel 1^Input;
+                              .bLimitBackwardEnable:=TIIB[SamplePaddleXY-EL1084]^Channel 2^Input'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:07
+	'}
+	M7  	: DUT_MotionStage; // Sample Paddle X
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddleXY-EL1084]^Channel 3^Input;
+                              .bLimitBackwardEnable:=TIIB[SamplePaddleXY-EL1084]^Channel 4^Input'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:08
+	'}
+	M8  	: DUT_MotionStage; // Sample Paddle Y
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 1^Input;
+                              .bLimitBackwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 2^Input'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:07
+	'}
+	M9  	: DUT_MotionStage; // Sample Paddle Z
+	
+	fbMotionStageM1	: FB_MotionStage;
+	fbMotionStageM2	: FB_MotionStage;
+	fbMotionStageM3	: FB_MotionStage;
+	fbMotionStageM4	: FB_MotionStage;
+	fbMotionStageM5	: FB_MotionStage;
+	fbMotionStageM6	: FB_MotionStage;
+	fbMotionStageM7	: FB_MotionStage;
+	fbMotionStageM8	: FB_MotionStage;
+	fbMotionStageM9	: FB_MotionStage;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Hardware Enable
+// Gas Jet
+M1.bHardwareEnable	:= TRUE;
+M2.bHardwareEnable	:= TRUE;
+M3.bHardwareEnable	:= TRUE;
+// Gas Needle
+M4.bHardwareEnable	:= TRUE;
+M5.bHardwareEnable	:= TRUE;
+M6.bHardwareEnable	:= TRUE;
+// Sample Paddle
+M7.bHardwareEnable	:= TRUE;
+M8.bHardwareEnable	:= TRUE;
+M9.bHardwareEnable	:= TRUE;
+
+// fbMotionStage
+// Gas Jet
+fbMotionStageM1(stMotionStage:=M1);
+fbMotionStageM2(stMotionStage:=M2);
+fbMotionStageM3(stMotionStage:=M3);
+// Gas Needle
+fbMotionStageM4(stMotionStage:=M4);
+fbMotionStageM5(stMotionStage:=M5);
+fbMotionStageM6(stMotionStage:=M6);
+// Sample Paddle
+fbMotionStageM7(stMotionStage:=M7);
+fbMotionStageM8(stMotionStage:=M8);
+fbMotionStageM9(stMotionStage:=M9);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
