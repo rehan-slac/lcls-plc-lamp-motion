@@ -1355,7 +1355,7 @@ External Setpoint Generation:
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="4">
-			<EncPara ScaleFactorNumerator="0.02" MaxCount="#xffffffff">
+			<EncPara ScaleFactorNumerator="1e-05" MaxCount="#xffffffff">
 				<Inc RefSoftSyncMask="#x0000ffff"/>
 			</EncPara>
 			<Vars VarGrpType="1">
@@ -1515,7 +1515,7 @@ Drive Status 4 (manually linked):
 		</Drive>
 		<Controller Name="Ctrl" CtrType="1">
 			<CtrPara PriorControlFactor="1">
-				<PosDiffControl Range="0.001"/>
+				<PosDiffControl Range="0.5"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
 		</Controller>
