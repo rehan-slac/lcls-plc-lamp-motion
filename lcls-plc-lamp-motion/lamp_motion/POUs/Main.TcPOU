@@ -60,8 +60,8 @@ VAR
 	'}
 	M8  	: DUT_MotionStage; // Sample Paddle Y
 
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 1^Input;
-                              .bLimitBackwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 2^Input'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 2^Input;
+                              .bLimitBackwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 1^Input'}
 	{attribute 'pytmc' := '
 		pv: TMO:LAMP:MMS:07
 	'}
@@ -76,36 +76,92 @@ VAR
 	fbMotionStageM7	: FB_MotionStage;
 	fbMotionStageM8	: FB_MotionStage;
 	fbMotionStageM9	: FB_MotionStage;
+	
+	//persistent data
+	fbWritePersistentData	: WritePersistentData;
+	bInit					: BOOL := TRUE;
+	fbWriteDelay			: TON;
+	mcSetPosition			: ARRAY [0..2] of MC_SetPosition;
 END_VAR
-]]></Declaration>
-    <Implementation>
-      <ST><![CDATA[// Hardware Enable
-// Gas Jet
-M1.bHardwareEnable	:= TRUE;
-M2.bHardwareEnable	:= TRUE;
-M3.bHardwareEnable	:= TRUE;
-// Gas Needle
-M4.bHardwareEnable	:= TRUE;
-M5.bHardwareEnable	:= TRUE;
-M6.bHardwareEnable	:= TRUE;
-// Sample Paddle
-M7.bHardwareEnable	:= TRUE;
-M8.bHardwareEnable	:= TRUE;
-M9.bHardwareEnable	:= TRUE;
 
-// fbMotionStage
-// Gas Jet
-fbMotionStageM1(stMotionStage:=M1);
-fbMotionStageM2(stMotionStage:=M2);
-fbMotionStageM3(stMotionStage:=M3);
-// Gas Needle
-fbMotionStageM4(stMotionStage:=M4);
-fbMotionStageM5(stMotionStage:=M5);
-fbMotionStageM6(stMotionStage:=M6);
-// Sample Paddle
-fbMotionStageM7(stMotionStage:=M7);
-fbMotionStageM8(stMotionStage:=M8);
-fbMotionStageM9(stMotionStage:=M9);]]></ST>
+VAR PERSISTENT 
+	fGasNeedleXPos	: LREAL;
+	fGasNeedleYPos	: LREAL;
+	fGasNeedleZPos	: LREAL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bInit THEN
+	//Sets axes position with persistent value
+	mcSetPosition[0](Axis:=M7.Axis, Position:=fGasNeedleXPos, Mode:=FALSE, Execute:=TRUE);
+	mcSetPosition[1](Axis:=M8.Axis, Position:=fGasNeedleyPos, Mode:=FALSE, Execute:=TRUE);
+	mcSetPosition[2](Axis:=M9.Axis, Position:=fGasNeedleZPos, Mode:=FALSE, Execute:=TRUE);
+	if (mcSetPosition[0].Done and NOT mcSetPosition[0].Error) AND (mcSetPosition[1].Done and NOT mcSetPosition[1].Error) AND (mcSetPosition[2].Done and NOT mcSetPosition[2].Error) THEN
+		bInit:=FALSE;
+		mcSetPosition[0](Axis:=M7.Axis, Execute:=FALSE);
+		mcSetPosition[1](Axis:=M8.Axis, Execute:=FALSE);
+		mcSetPosition[2](Axis:=M9.Axis, Execute:=FALSE);
+	END_IF
+ELSE
+	// Hardware Enable
+	// Gas Jet
+	M1.bHardwareEnable	:= TRUE;
+	M2.bHardwareEnable	:= TRUE;
+	M3.bHardwareEnable	:= TRUE;
+	// Gas Needle
+	M4.bHardwareEnable	:= TRUE;
+	M5.bHardwareEnable	:= TRUE;
+	M6.bHardwareEnable	:= TRUE;
+	// Sample Paddle
+	M7.bHardwareEnable	:= TRUE;
+	M8.bHardwareEnable	:= TRUE;
+	M9.bHardwareEnable	:= TRUE;
+	
+	// fbMotionStage
+	// Gas Jet
+	fbMotionStageM1(stMotionStage:=M1);
+	fbMotionStageM2(stMotionStage:=M2);
+	fbMotionStageM3(stMotionStage:=M3);
+	// Gas Needle
+	fbMotionStageM4(stMotionStage:=M4);
+	fbMotionStageM5(stMotionStage:=M5);
+	fbMotionStageM6(stMotionStage:=M6);
+	// Sample Paddle
+	fbMotionStageM7(stMotionStage:=M7);
+	fbMotionStageM8(stMotionStage:=M8);
+	fbMotionStageM9(stMotionStage:=M9);
+
+	//Keep track of position
+	fGasNeedleXPos	:= M7.Axis.NcToPlc.ActPos;
+	fGasNeedleYPos	:= M8.Axis.NcToPlc.ActPos;
+	fGasNeedleZPos	:= M9.Axis.NcToPlc.ActPos;
+	IF fbWriteDelay.Q THEN
+		fbWritePersistentData(NETID:='', PORT:=851, START:=TRUE, TMOUT:=T#1S);
+		fbWriteDelay(IN:=FALSE);
+	ELSE
+		fbWriteDelay(IN:=TRUE, PT:=T#0.5S);
+	END_IF
+	
+END_IF;]]></ST>
     </Implementation>
+    <LineIds Name="Main">
+      <LineId Id="123" Count="0" />
+      <LineId Id="191" Count="0" />
+      <LineId Id="133" Count="0" />
+      <LineId Id="140" Count="1" />
+      <LineId Id="143" Count="1" />
+      <LineId Id="189" Count="1" />
+      <LineId Id="188" Count="0" />
+      <LineId Id="145" Count="0" />
+      <LineId Id="135" Count="0" />
+      <LineId Id="150" Count="25" />
+      <LineId Id="149" Count="0" />
+      <LineId Id="148" Count="0" />
+      <LineId Id="184" Count="2" />
+      <LineId Id="183" Count="0" />
+      <LineId Id="176" Count="4" />
+      <LineId Id="136" Count="0" />
+      <LineId Id="181" Count="0" />
+      <LineId Id="116" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
