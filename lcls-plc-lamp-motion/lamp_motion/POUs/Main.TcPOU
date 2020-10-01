@@ -81,25 +81,47 @@ VAR
 	fbWritePersistentData	: WritePersistentData;
 	bInit					: BOOL := TRUE;
 	fbWriteDelay			: TON;
-	mcSetPosition			: ARRAY [0..2] of MC_SetPosition;
+	mcSetPosition			: ARRAY [1..9] of MC_SetPosition;
 END_VAR
 
 VAR PERSISTENT 
+	fGasJetXPos		: LREAL;
+	fGasJetYPos		: LREAL;
+	fGasJetZPos		: LREAL;
 	fGasNeedleXPos	: LREAL;
 	fGasNeedleYPos	: LREAL;
 	fGasNeedleZPos	: LREAL;
+	fGasPaddleXPos	: LREAL;
+	fGasPaddleYPos	: LREAL;
+	fGasPaddleZPos	: LREAL;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF bInit THEN
 	//Sets axes position with persistent value
-	mcSetPosition[0](Axis:=M7.Axis, Position:=fGasNeedleXPos, Mode:=FALSE, Execute:=TRUE);
-	mcSetPosition[1](Axis:=M8.Axis, Position:=fGasNeedleyPos, Mode:=FALSE, Execute:=TRUE);
-	mcSetPosition[2](Axis:=M9.Axis, Position:=fGasNeedleZPos, Mode:=FALSE, Execute:=TRUE);
-	if (mcSetPosition[0].Done and NOT mcSetPosition[0].Error) AND (mcSetPosition[1].Done and NOT mcSetPosition[1].Error) AND (mcSetPosition[2].Done and NOT mcSetPosition[2].Error) THEN
+	mcSetPosition[1](Axis:=M1.Axis, Position:=fGasJetXPos, Mode:=FALSE, Execute:=TRUE);
+	mcSetPosition[2](Axis:=M2.Axis, Position:=fGasJetYPos, Mode:=FALSE, Execute:=TRUE);
+	mcSetPosition[2](Axis:=M3.Axis, Position:=fGasJetZPos, Mode:=FALSE, Execute:=TRUE);
+	mcSetPosition[4](Axis:=M4.Axis, Position:=fGasNeedleXPos, Mode:=FALSE, Execute:=TRUE);
+	mcSetPosition[5](Axis:=M5.Axis, Position:=fGasNeedleyPos, Mode:=FALSE, Execute:=TRUE);
+	mcSetPosition[6](Axis:=M6.Axis, Position:=fGasNeedleZPos, Mode:=FALSE, Execute:=TRUE);
+	mcSetPosition[7](Axis:=M7.Axis, Position:=fGasPaddleXPos, Mode:=FALSE, Execute:=TRUE);
+	mcSetPosition[8](Axis:=M8.Axis, Position:=fGasPaddleyPos, Mode:=FALSE, Execute:=TRUE);
+	mcSetPosition[9](Axis:=M9.Axis, Position:=fGasPaddleZPos, Mode:=FALSE, Execute:=TRUE);
+	if (mcSetPosition[1].Done and NOT mcSetPosition[1].Error) AND (mcSetPosition[2].Done and NOT mcSetPosition[2].Error) 
+		AND (mcSetPosition[3].Done and NOT mcSetPosition[3].Error) AND (mcSetPosition[4].Done and NOT mcSetPosition[4].Error) 
+		AND (mcSetPosition[5].Done and NOT mcSetPosition[5].Error) AND (mcSetPosition[6].Done and NOT mcSetPosition[6].Error) 
+		AND (mcSetPosition[7].Done and NOT mcSetPosition[7].Error) AND (mcSetPosition[8].Done and NOT mcSetPosition[8].Error) 
+		AND (mcSetPosition[9].Done and NOT mcSetPosition[9].Error) THEN
 		bInit:=FALSE;
-		mcSetPosition[0](Axis:=M7.Axis, Execute:=FALSE);
-		mcSetPosition[1](Axis:=M8.Axis, Execute:=FALSE);
-		mcSetPosition[2](Axis:=M9.Axis, Execute:=FALSE);
+		mcSetPosition[1](Axis:=M1.Axis, Execute:=FALSE);
+		mcSetPosition[2](Axis:=M2.Axis, Execute:=FALSE);
+		mcSetPosition[3](Axis:=M3.Axis, Execute:=FALSE);
+		mcSetPosition[4](Axis:=M4.Axis, Execute:=FALSE);
+		mcSetPosition[5](Axis:=M5.Axis, Execute:=FALSE);
+		mcSetPosition[6](Axis:=M6.Axis, Execute:=FALSE);
+		mcSetPosition[7](Axis:=M7.Axis, Execute:=FALSE);
+		mcSetPosition[8](Axis:=M8.Axis, Execute:=FALSE);
+		mcSetPosition[9](Axis:=M9.Axis, Execute:=FALSE);
 	END_IF
 ELSE
 	// Hardware Enable
@@ -131,16 +153,22 @@ ELSE
 	fbMotionStageM9(stMotionStage:=M9);
 
 	//Keep track of position
-	fGasNeedleXPos	:= M7.Axis.NcToPlc.ActPos;
-	fGasNeedleYPos	:= M8.Axis.NcToPlc.ActPos;
-	fGasNeedleZPos	:= M9.Axis.NcToPlc.ActPos;
+	fGasJetXPos		:= M1.Axis.NcToPlc.ActPos;
+	fGasJetYPos		:= M2.Axis.NcToPlc.ActPos;
+	fGasJetZPos		:= M3.Axis.NcToPlc.ActPos;
+	fGasNeedleXPos	:= M4.Axis.NcToPlc.ActPos;
+	fGasNeedleYPos	:= M5.Axis.NcToPlc.ActPos;
+	fGasNeedleZPos	:= M6.Axis.NcToPlc.ActPos;
+	fGasPaddleXPos	:= M7.Axis.NcToPlc.ActPos;
+	fGasPaddleYPos	:= M8.Axis.NcToPlc.ActPos;
+	fGasPaddleZPos	:= M9.Axis.NcToPlc.ActPos;
 	IF fbWriteDelay.Q THEN
 		fbWritePersistentData(NETID:='', PORT:=851, START:=TRUE, TMOUT:=T#1S);
 		fbWriteDelay(IN:=FALSE);
 	ELSE
+		fbWritePersistentData(START:=FALSE);
 		fbWriteDelay(IN:=TRUE, PT:=T#0.5S);
-	END_IF
-	
+	END_IF	
 END_IF;]]></ST>
     </Implementation>
     <LineIds Name="Main">
@@ -148,19 +176,35 @@ END_IF;]]></ST>
       <LineId Id="191" Count="0" />
       <LineId Id="133" Count="0" />
       <LineId Id="140" Count="1" />
-      <LineId Id="143" Count="1" />
-      <LineId Id="189" Count="1" />
+      <LineId Id="286" Count="1" />
+      <LineId Id="285" Count="0" />
+      <LineId Id="289" Count="1" />
+      <LineId Id="288" Count="0" />
+      <LineId Id="143" Count="0" />
+      <LineId Id="291" Count="0" />
+      <LineId Id="301" Count="1" />
+      <LineId Id="304" Count="0" />
+      <LineId Id="144" Count="0" />
+      <LineId Id="294" Count="0" />
       <LineId Id="188" Count="0" />
+      <LineId Id="296" Count="1" />
+      <LineId Id="295" Count="0" />
+      <LineId Id="299" Count="1" />
+      <LineId Id="298" Count="0" />
+      <LineId Id="305" Count="0" />
       <LineId Id="145" Count="0" />
       <LineId Id="135" Count="0" />
       <LineId Id="150" Count="25" />
       <LineId Id="149" Count="0" />
       <LineId Id="148" Count="0" />
-      <LineId Id="184" Count="2" />
+      <LineId Id="184" Count="0" />
+      <LineId Id="306" Count="5" />
+      <LineId Id="185" Count="1" />
       <LineId Id="183" Count="0" />
-      <LineId Id="176" Count="4" />
+      <LineId Id="176" Count="3" />
+      <LineId Id="312" Count="0" />
+      <LineId Id="180" Count="0" />
       <LineId Id="136" Count="0" />
-      <LineId Id="181" Count="0" />
       <LineId Id="116" Count="0" />
     </LineIds>
   </POU>
