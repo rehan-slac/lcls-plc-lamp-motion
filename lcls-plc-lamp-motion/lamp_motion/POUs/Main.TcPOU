@@ -48,22 +48,23 @@ VAR
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddleXY-EL1084]^Channel 1^Input;
                               .bLimitBackwardEnable:=TIIB[SamplePaddleXY-EL1084]^Channel 2^Input'}
-	{attribute 'pytmc' := '
-		pv: TMO:LAMP:MMS:07
-	'}
+//	{attribute 'pytmc' := '
+//		pv: TMO:LAMP:MMS:07
+//	'}
 	M7  	: DUT_MotionStage; // Sample Paddle X
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddleXY-EL1084]^Channel 3^Input;
                               .bLimitBackwardEnable:=TIIB[SamplePaddleXY-EL1084]^Channel 4^Input'}
-	{attribute 'pytmc' := '
-		pv: TMO:LAMP:MMS:08
-	'}
+//	{attribute 'pytmc' := '
+//		pv: TMO:LAMP:MMS:08
+//	'}
 	M8  	: DUT_MotionStage; // Sample Paddle Y
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 2^Input;
                               .bLimitBackwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 1^Input'}
-	{attribute 'pytmc' := '
-		pv: TMO:LAMP:MMS:09	'}
+//	{attribute 'pytmc' := '
+//		pv: TMO:LAMP:MMS:09
+//    '}
 	M9  	: DUT_MotionStage; // Sample Paddle Z
 	
 	fbMotionStageM1	: FB_MotionStage;
