@@ -9,63 +9,63 @@ VAR
 	{attribute 'pytmc' := '
 		pv: TMO:LAMP:MMS:01
 	'}
-	M1		: DUT_MotionStage; // Gas Jet X
+	M1		: DUT_MotionStage := (bPowerSelf:=TRUE); // Gas Jet X
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
 		pv: TMO:LAMP:MMS:02
 	'}
-	M2		: DUT_MotionStage; // Gas Jet Y
+	M2		: DUT_MotionStage := (bPowerSelf:=TRUE); // Gas Jet Y
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetZ-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[GasJetZ-EL7041]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
 		pv: TMO:LAMP:MMS:03
 	'}
-	M3		: DUT_MotionStage; // Gas Jet Z
+	M3		: DUT_MotionStage := (bPowerSelf:=TRUE); // Gas Jet Z
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleX-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[GasNeedleX-EL7041]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
 		pv: TMO:LAMP:MMS:04
 	'}
-	M4	    : DUT_MotionStage; // Gas Needle X
+	M4	    : DUT_MotionStage := (bPowerSelf:=TRUE); // Gas Needle X
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
 		pv: TMO:LAMP:MMS:05
 	'}
-	M5	    : DUT_MotionStage; // Gas Needle Y
+	M5	    : DUT_MotionStage := (bPowerSelf:=TRUE); // Gas Needle Y
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
 		pv: TMO:LAMP:MMS:06
 	'}
-	M6	    : DUT_MotionStage; // Gas Needle Z
+	M6	    : DUT_MotionStage := (bPowerSelf:=TRUE); // Gas Needle Z
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddleXY-EL1084]^Channel 1^Input;
                               .bLimitBackwardEnable:=TIIB[SamplePaddleXY-EL1084]^Channel 2^Input'}
 	{attribute 'pytmc' := '
 		pv: TMO:LAMP:MMS:07
 	'}
-	M7  	: DUT_MotionStage; // Sample Paddle X
+	M7  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Sample Paddle X
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddleXY-EL1084]^Channel 3^Input;
                               .bLimitBackwardEnable:=TIIB[SamplePaddleXY-EL1084]^Channel 4^Input'}
 	{attribute 'pytmc' := '
 		pv: TMO:LAMP:MMS:08
 	'}
-	M8  	: DUT_MotionStage; // Sample Paddle Y
+	M8  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Sample Paddle Y
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 2^Input;
                               .bLimitBackwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 1^Input'}
 	{attribute 'pytmc' := '
 		pv: TMO:LAMP:MMS:09
     '}
-	M9  	: DUT_MotionStage; // Sample Paddle Z
+	M9  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Sample Paddle Z
 	
 	fbMotionStageM1	: FB_MotionStage;
 	fbMotionStageM2	: FB_MotionStage;
