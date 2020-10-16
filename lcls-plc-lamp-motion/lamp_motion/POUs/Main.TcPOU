@@ -60,8 +60,8 @@ VAR
 	'}
 	M8  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Sample Paddle Y
 
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 2^Input;
-                              .bLimitBackwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 1^Input'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 1^Input;
+                              .bLimitBackwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 2^Input'}
 	{attribute 'pytmc' := '
 		pv: TMO:LAMP:MMS:09
     '}

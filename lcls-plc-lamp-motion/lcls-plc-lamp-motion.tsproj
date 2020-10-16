@@ -2,9 +2,10 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4022.30">
 	<Project ProjectGUID="{E263E8AE-D66F-49E0-894E-F5EBD34AE5AE}" TargetNetId="172.21.132.58.1.1" RelativeTargetNetId="true" RelativeIpAddresses="true" ShowHideConfigurations="#x306">
 		<System>
-			<Licenses>
+			<Licenses CacheOrCheckLicensesOnStartup="true">
 				<Target>
 					<ManualSelect>{BF78CFC7-2E63-42C3-8C07-BB6C346BFB8B}</ManualSelect>
+					<LicenseDevice DongleHardwareId="4" DongleDevice="#x03020003" DongleSystemId="{A19A9D0F-F84B-C714-E580-8A762B6067AA}"/>
 				</Target>
 			</Licenses>
 			<Tasks>

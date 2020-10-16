@@ -2429,8 +2429,8 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M8.bLimitForwardEnable" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^PLC Junction 1 (EK1122)^X1 VacuumMotion (EK1100)^SamplePaddleZ-EL1084">
-				<Link VarA="PlcTask Inputs^Main.M9.bLimitBackwardEnable" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^Main.M9.bLimitForwardEnable" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M9.bLimitBackwardEnable" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M9.bLimitForwardEnable" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^GasJetX">
 				<Link VarA="PlcTask Inputs^Main.M1.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
