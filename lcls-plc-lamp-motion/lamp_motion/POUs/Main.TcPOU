@@ -39,8 +39,8 @@ VAR
 	'}
 	M5	    : DUT_MotionStage := (bPowerSelf:=TRUE); // Gas Needle Y
 
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 2;
+                              .bLimitBackwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 1'}
 	{attribute 'pytmc' := '
 		pv: TMO:LAMP:MMS:06
 	'}
