@@ -2425,8 +2425,8 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^PLC Junction 1 (EK1122)^X1 VacuumMotion (EK1100)^SamplePaddleXY-EL1084">
 				<Link VarA="PlcTask Inputs^Main.M7.bLimitBackwardEnable" VarB="Channel 2^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M7.bLimitForwardEnable" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^Main.M8.bLimitBackwardEnable" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^Main.M8.bLimitForwardEnable" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M8.bLimitBackwardEnable" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M8.bLimitForwardEnable" VarB="Channel 4^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^PLC Junction 1 (EK1122)^X1 VacuumMotion (EK1100)^SamplePaddleZ-EL1084">
 				<Link VarA="PlcTask Inputs^Main.M9.bLimitBackwardEnable" VarB="Channel 2^Input" AutoLink="true"/>
