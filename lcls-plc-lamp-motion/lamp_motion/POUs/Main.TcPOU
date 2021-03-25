@@ -67,6 +67,13 @@ VAR
     '}
 	M9  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Sample Paddle Z
 	
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[M10-EL7041]^STM Status^Status^Digital input 2;
+                              .bLimitBackwardEnable:=TIIB[M10-EL7041]^STM Status^Status^Digital input 1'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:10
+    '}
+	M10  	: DUT_MotionStage := (bPowerSelf:=TRUE); // M10
+	
 	fbMotionStageM1	: FB_MotionStage;
 	fbMotionStageM2	: FB_MotionStage;
 	fbMotionStageM3	: FB_MotionStage;
@@ -76,12 +83,13 @@ VAR
 	fbMotionStageM7	: FB_MotionStage;
 	fbMotionStageM8	: FB_MotionStage;
 	fbMotionStageM9	: FB_MotionStage;
+	fbMotionStageM10	: FB_MotionStage;
 	
 	//persistent data
 	fbWritePersistentData	: WritePersistentData;
 	bInit					: BOOL := TRUE;
 	fbWriteDelay			: TON;
-	mcSetPosition			: ARRAY [1..9] of MC_SetPosition;
+	mcSetPosition			: ARRAY [1..10] of MC_SetPosition;
 END_VAR
 
 VAR PERSISTENT 
@@ -94,6 +102,7 @@ VAR PERSISTENT
 	fGasPaddleXPos	: LREAL;
 	fGasPaddleYPos	: LREAL;
 	fGasPaddleZPos	: LREAL;
+	fM10Pos			: LREAL;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF bInit THEN
@@ -107,11 +116,13 @@ END_VAR]]></Declaration>
 	mcSetPosition[7](Axis:=M7.Axis, Position:=fGasPaddleXPos, Mode:=FALSE, Execute:=TRUE);
 	mcSetPosition[8](Axis:=M8.Axis, Position:=fGasPaddleyPos, Mode:=FALSE, Execute:=TRUE);
 	mcSetPosition[9](Axis:=M9.Axis, Position:=fGasPaddleZPos, Mode:=FALSE, Execute:=TRUE);
+	mcSetPosition[10](Axis:=M10.Axis, Position:=fM10Pos, Mode:=FALSE, Execute:=TRUE);
 	if (mcSetPosition[1].Done and NOT mcSetPosition[1].Error) AND (mcSetPosition[2].Done and NOT mcSetPosition[2].Error) 
 		AND (mcSetPosition[3].Done and NOT mcSetPosition[3].Error) AND (mcSetPosition[4].Done and NOT mcSetPosition[4].Error) 
 		AND (mcSetPosition[5].Done and NOT mcSetPosition[5].Error) AND (mcSetPosition[6].Done and NOT mcSetPosition[6].Error) 
 		AND (mcSetPosition[7].Done and NOT mcSetPosition[7].Error) AND (mcSetPosition[8].Done and NOT mcSetPosition[8].Error) 
-		AND (mcSetPosition[9].Done and NOT mcSetPosition[9].Error) THEN
+		AND (mcSetPosition[9].Done and NOT mcSetPosition[9].Error) AND (mcSetPosition[10].Done and NOT mcSetPosition[10].Error)
+		THEN
 		bInit:=FALSE;
 		mcSetPosition[1](Axis:=M1.Axis, Execute:=FALSE);
 		mcSetPosition[2](Axis:=M2.Axis, Execute:=FALSE);
@@ -122,6 +133,7 @@ END_VAR]]></Declaration>
 		mcSetPosition[7](Axis:=M7.Axis, Execute:=FALSE);
 		mcSetPosition[8](Axis:=M8.Axis, Execute:=FALSE);
 		mcSetPosition[9](Axis:=M9.Axis, Execute:=FALSE);
+		mcSetPosition[10](Axis:=M10.Axis, Execute:=FALSE);
 	END_IF
 ELSE
 	// Hardware Enable
@@ -138,6 +150,9 @@ ELSE
 	M8.bHardwareEnable	:= TRUE;
 	M9.bHardwareEnable	:= TRUE;
 	
+	//Extra
+	M10.bHardwareEnable	:= TRUE;
+	
 	// fbMotionStage
 	// Gas Jet
 	fbMotionStageM1(stMotionStage:=M1);
@@ -151,6 +166,9 @@ ELSE
 	fbMotionStageM7(stMotionStage:=M7);
 	fbMotionStageM8(stMotionStage:=M8);
 	fbMotionStageM9(stMotionStage:=M9);
+	
+	//Extra
+	fbMotionStageM10(stMotionStage:=M10);
 
 	//Keep track of position
 	fGasJetXPos		:= M1.Axis.NcToPlc.ActPos;
@@ -162,6 +180,7 @@ ELSE
 	fGasPaddleXPos	:= M7.Axis.NcToPlc.ActPos;
 	fGasPaddleYPos	:= M8.Axis.NcToPlc.ActPos;
 	fGasPaddleZPos	:= M9.Axis.NcToPlc.ActPos;
+	fM10Pos	:= M10.Axis.NcToPlc.ActPos;
 	IF fbWriteDelay.Q THEN
 		fbWritePersistentData(NETID:='', PORT:=851, START:=TRUE, TMOUT:=T#1S);
 		fbWriteDelay(IN:=FALSE);
@@ -172,7 +191,21 @@ ELSE
 END_IF;]]></ST>
     </Implementation>
     <LineIds Name="Main">
-      <LineId Id="3" Count="72" />
+      <LineId Id="3" Count="10" />
+      <LineId Id="178" Count="0" />
+      <LineId Id="14" Count="4" />
+      <LineId Id="179" Count="0" />
+      <LineId Id="19" Count="9" />
+      <LineId Id="180" Count="0" />
+      <LineId Id="29" Count="14" />
+      <LineId Id="181" Count="1" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="184" Count="0" />
+      <LineId Id="45" Count="12" />
+      <LineId Id="185" Count="2" />
+      <LineId Id="58" Count="10" />
+      <LineId Id="188" Count="0" />
+      <LineId Id="69" Count="6" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
