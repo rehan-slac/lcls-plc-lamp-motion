@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <POU Name="Main" Id="{6f4a6b61-6bc5-4c57-90c1-877a33915112}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
@@ -51,27 +51,27 @@ VAR
 	{attribute 'pytmc' := '
 		pv: TMO:LAMP:MMS:07
 	'}
-	M7  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Sample Paddle X
+	//M7  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Sample Paddle X
 
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddleXY-EL1084]^Channel 4^Input;
-                              .bLimitBackwardEnable:=TIIB[SamplePaddleXY-EL1084]^Channel 3^Input'}
-	{attribute 'pytmc' := '
-		pv: TMO:LAMP:MMS:08
-	'}
-	M8  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Sample Paddle Y
+	//{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddleXY-EL1084]^Channel 4^Input;
+    //                          .bLimitBackwardEnable:=TIIB[SamplePaddleXY-EL1084]^Channel 3^Input'}
+	//{attribute 'pytmc' := '
+	//	pv: TMO:LAMP:MMS:08
+	//'}
+	//M8  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Sample Paddle Y
 
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 1^Input;
-                              .bLimitBackwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 2^Input'}
-	{attribute 'pytmc' := '
-		pv: TMO:LAMP:MMS:09
-    '}
-	M9  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Sample Paddle Z
+	//{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 1^Input;
+    //                          .bLimitBackwardEnable:=TIIB[SamplePaddleZ-EL1084]^Channel 2^Input'}
+	//{attribute 'pytmc' := '
+	//	pv: TMO:LAMP:MMS:09
+    //'}
+	//M9  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Sample Paddle Z
 	
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[M10-EL7041]^STM Status^Status^Digital input 2;
-                              .bLimitBackwardEnable:=TIIB[M10-EL7041]^STM Status^Status^Digital input 1'}
-	{attribute 'pytmc' := '
-		pv: TMO:LAMP:MMS:10
-    '}
+	//{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[M10-EL7041]^STM Status^Status^Digital input 2;
+    //                          .bLimitBackwardEnable:=TIIB[M10-EL7041]^STM Status^Status^Digital input 1'}
+	//{attribute 'pytmc' := '
+	//	pv: TMO:LAMP:MMS:10
+    //'}
 	M10  	: DUT_MotionStage := (bPowerSelf:=TRUE); // M10
 	
 	fbMotionStageM1	: FB_MotionStage;
@@ -80,9 +80,9 @@ VAR
 	fbMotionStageM4	: FB_MotionStage;
 	fbMotionStageM5	: FB_MotionStage;
 	fbMotionStageM6	: FB_MotionStage;
-	fbMotionStageM7	: FB_MotionStage;
-	fbMotionStageM8	: FB_MotionStage;
-	fbMotionStageM9	: FB_MotionStage;
+	//fbMotionStageM7	: FB_MotionStage;
+	//fbMotionStageM8	: FB_MotionStage;
+	//fbMotionStageM9	: FB_MotionStage;
 	fbMotionStageM10	: FB_MotionStage;
 	
 	//persistent data
@@ -99,9 +99,9 @@ VAR PERSISTENT
 	fGasNeedleXPos	: LREAL;
 	fGasNeedleYPos	: LREAL;
 	fGasNeedleZPos	: LREAL;
-	fGasPaddleXPos	: LREAL;
-	fGasPaddleYPos	: LREAL;
-	fGasPaddleZPos	: LREAL;
+	//fGasPaddleXPos	: LREAL;
+	//fGasPaddleYPos	: LREAL;
+	//fGasPaddleZPos	: LREAL;
 	fM10Pos			: LREAL;
 END_VAR]]></Declaration>
     <Implementation>
@@ -113,15 +113,19 @@ END_VAR]]></Declaration>
 	mcSetPosition[4](Axis:=M4.Axis, Position:=fGasNeedleXPos, Mode:=FALSE, Execute:=TRUE);
 	mcSetPosition[5](Axis:=M5.Axis, Position:=fGasNeedleyPos, Mode:=FALSE, Execute:=TRUE);
 	mcSetPosition[6](Axis:=M6.Axis, Position:=fGasNeedleZPos, Mode:=FALSE, Execute:=TRUE);
-	mcSetPosition[7](Axis:=M7.Axis, Position:=fGasPaddleXPos, Mode:=FALSE, Execute:=TRUE);
-	mcSetPosition[8](Axis:=M8.Axis, Position:=fGasPaddleyPos, Mode:=FALSE, Execute:=TRUE);
-	mcSetPosition[9](Axis:=M9.Axis, Position:=fGasPaddleZPos, Mode:=FALSE, Execute:=TRUE);
+    mcSetPosition[6](Axis:=M6.Axis, Position:=fGasNeedleZPos, Mode:=FALSE, Execute:=TRUE);
+    mcSetPosition[6](Axis:=M6.Axis, Position:=fGasNeedleZPos, Mode:=FALSE, Execute:=TRUE);
+    mcSetPosition[6](Axis:=M6.Axis, Position:=fGasNeedleZPos, Mode:=FALSE, Execute:=TRUE);
+	//mcSetPosition[7](Axis:=M7.Axis, Position:=fGasPaddleXPos, Mode:=FALSE, Execute:=TRUE);
+	//mcSetPosition[8](Axis:=M8.Axis, Position:=fGasPaddleyPos, Mode:=FALSE, Execute:=TRUE);
+	//mcSetPosition[9](Axis:=M9.Axis, Position:=fGasPaddleZPos, Mode:=FALSE, Execute:=TRUE);
 	mcSetPosition[10](Axis:=M10.Axis, Position:=fM10Pos, Mode:=FALSE, Execute:=TRUE);
 	if (mcSetPosition[1].Done and NOT mcSetPosition[1].Error) AND (mcSetPosition[2].Done and NOT mcSetPosition[2].Error) 
 		AND (mcSetPosition[3].Done and NOT mcSetPosition[3].Error) AND (mcSetPosition[4].Done and NOT mcSetPosition[4].Error) 
 		AND (mcSetPosition[5].Done and NOT mcSetPosition[5].Error) AND (mcSetPosition[6].Done and NOT mcSetPosition[6].Error) 
-		AND (mcSetPosition[7].Done and NOT mcSetPosition[7].Error) AND (mcSetPosition[8].Done and NOT mcSetPosition[8].Error) 
-		AND (mcSetPosition[9].Done and NOT mcSetPosition[9].Error) AND (mcSetPosition[10].Done and NOT mcSetPosition[10].Error)
+		//AND (mcSetPosition[7].Done and NOT mcSetPosition[7].Error) AND (mcSetPosition[8].Done and NOT mcSetPosition[8].Error) 
+		//AND (mcSetPosition[9].Done and NOT mcSetPosition[9].Error) 
+        AND (mcSetPosition[10].Done and NOT mcSetPosition[10].Error)
 		THEN
 		bInit:=FALSE;
 		mcSetPosition[1](Axis:=M1.Axis, Execute:=FALSE);
@@ -130,9 +134,9 @@ END_VAR]]></Declaration>
 		mcSetPosition[4](Axis:=M4.Axis, Execute:=FALSE);
 		mcSetPosition[5](Axis:=M5.Axis, Execute:=FALSE);
 		mcSetPosition[6](Axis:=M6.Axis, Execute:=FALSE);
-		mcSetPosition[7](Axis:=M7.Axis, Execute:=FALSE);
-		mcSetPosition[8](Axis:=M8.Axis, Execute:=FALSE);
-		mcSetPosition[9](Axis:=M9.Axis, Execute:=FALSE);
+		//mcSetPosition[7](Axis:=M7.Axis, Execute:=FALSE);
+		//mcSetPosition[8](Axis:=M8.Axis, Execute:=FALSE);
+		//mcSetPosition[9](Axis:=M9.Axis, Execute:=FALSE);
 		mcSetPosition[10](Axis:=M10.Axis, Execute:=FALSE);
 	END_IF
 ELSE
@@ -146,9 +150,9 @@ ELSE
 	M5.bHardwareEnable	:= TRUE;
 	M6.bHardwareEnable	:= TRUE;
 	// Sample Paddle
-	M7.bHardwareEnable	:= TRUE;
-	M8.bHardwareEnable	:= TRUE;
-	M9.bHardwareEnable	:= TRUE;
+	//M7.bHardwareEnable	:= TRUE;
+	//M8.bHardwareEnable	:= TRUE;
+	//M9.bHardwareEnable	:= TRUE;
 	
 	//Extra
 	M10.bHardwareEnable	:= TRUE;
@@ -163,9 +167,9 @@ ELSE
 	fbMotionStageM5(stMotionStage:=M5);
 	fbMotionStageM6(stMotionStage:=M6);
 	// Sample Paddle
-	fbMotionStageM7(stMotionStage:=M7);
-	fbMotionStageM8(stMotionStage:=M8);
-	fbMotionStageM9(stMotionStage:=M9);
+	//fbMotionStageM7(stMotionStage:=M7);
+	//fbMotionStageM8(stMotionStage:=M8);
+	//fbMotionStageM9(stMotionStage:=M9);
 	
 	//Extra
 	fbMotionStageM10(stMotionStage:=M10);
@@ -177,9 +181,9 @@ ELSE
 	fGasNeedleXPos	:= M4.Axis.NcToPlc.ActPos;
 	fGasNeedleYPos	:= M5.Axis.NcToPlc.ActPos;
 	fGasNeedleZPos	:= M6.Axis.NcToPlc.ActPos;
-	fGasPaddleXPos	:= M7.Axis.NcToPlc.ActPos;
-	fGasPaddleYPos	:= M8.Axis.NcToPlc.ActPos;
-	fGasPaddleZPos	:= M9.Axis.NcToPlc.ActPos;
+	//fGasPaddleXPos	:= M7.Axis.NcToPlc.ActPos;
+	//fGasPaddleYPos	:= M8.Axis.NcToPlc.ActPos;
+	//fGasPaddleZPos	:= M9.Axis.NcToPlc.ActPos;
 	fM10Pos	:= M10.Axis.NcToPlc.ActPos;
 	IF fbWriteDelay.Q THEN
 		fbWritePersistentData(NETID:='', PORT:=851, START:=TRUE, TMOUT:=T#1S);
@@ -191,9 +195,12 @@ ELSE
 END_IF;]]></ST>
     </Implementation>
     <LineIds Name="Main">
-      <LineId Id="3" Count="10" />
+      <LineId Id="3" Count="7" />
+      <LineId Id="312" Count="2" />
+      <LineId Id="11" Count="2" />
       <LineId Id="178" Count="0" />
       <LineId Id="14" Count="4" />
+      <LineId Id="291" Count="0" />
       <LineId Id="179" Count="0" />
       <LineId Id="19" Count="9" />
       <LineId Id="180" Count="0" />
