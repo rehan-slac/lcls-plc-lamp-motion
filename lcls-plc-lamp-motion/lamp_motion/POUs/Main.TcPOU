@@ -120,12 +120,12 @@ END_VAR]]></Declaration>
 	mcSetPosition[8](Axis:=M8.Axis, Position:=fGasPaddleyPos, Mode:=FALSE, Execute:=TRUE);
 	mcSetPosition[9](Axis:=M9.Axis, Position:=fGasPaddleZPos, Mode:=FALSE, Execute:=TRUE);
 	mcSetPosition[10](Axis:=M10.Axis, Position:=fM10Pos, Mode:=FALSE, Execute:=TRUE);
-	if (mcSetPosition[1].Done and NOT mcSetPosition[1].Error) AND (mcSetPosition[2].Done and NOT mcSetPosition[2].Error) 
-		AND (mcSetPosition[3].Done and NOT mcSetPosition[3].Error) AND (mcSetPosition[4].Done and NOT mcSetPosition[4].Error) 
-		AND (mcSetPosition[5].Done and NOT mcSetPosition[5].Error) AND (mcSetPosition[6].Done and NOT mcSetPosition[6].Error) 
-		AND (mcSetPosition[7].Done and NOT mcSetPosition[7].Error) AND (mcSetPosition[8].Done and NOT mcSetPosition[8].Error) 
-		AND (mcSetPosition[9].Done and NOT mcSetPosition[9].Error) 
-        AND (mcSetPosition[10].Done and NOT mcSetPosition[10].Error)
+	if (mcSetPosition[1].Done OR mcSetPosition[1].Error) AND (mcSetPosition[2].Done OR mcSetPosition[2].Error) 
+		AND (mcSetPosition[3].Done OR mcSetPosition[3].Error) AND (mcSetPosition[4].Done OR mcSetPosition[4].Error) 
+		AND (mcSetPosition[5].Done OR mcSetPosition[5].Error) AND (mcSetPosition[6].Done OR mcSetPosition[6].Error) 
+		AND (mcSetPosition[7].Done OR mcSetPosition[7].Error) AND (mcSetPosition[8].Done OR mcSetPosition[8].Error) 
+		AND (mcSetPosition[9].Done OR mcSetPosition[9].Error) 
+        AND (mcSetPosition[10].Done OR mcSetPosition[10].Error)
 		THEN
 		bInit:=FALSE;
 		mcSetPosition[1](Axis:=M1.Axis, Execute:=FALSE);
