@@ -77,21 +77,21 @@ VAR
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
-		pv: TMO:LAMP:MMS:10
+		pv: TMO:LAMP:MMS:11
     '}
 	M11  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Flow Cell Y
 	
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
-		pv: TMO:LAMP:MMS:10
+		pv: TMO:LAMP:MMS:12
     '}
 	M12  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Flow Cell Z
 	
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[FlowCellTheta-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[FlowCellTheta-EL7041]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
-		pv: TMO:LAMP:MMS:10
+		pv: TMO:LAMP:MMS:13
     '}
 	M13  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Flow Cell Theta
 	
@@ -108,7 +108,6 @@ VAR
 	fbMotionStageM11	: FB_MotionStage;
 	fbMotionStageM12	: FB_MotionStage;
 	fbMotionStageM13	: FB_MotionStage;
-	
 	
 	//persistent data
 	fbWritePersistentData	: WritePersistentData;
