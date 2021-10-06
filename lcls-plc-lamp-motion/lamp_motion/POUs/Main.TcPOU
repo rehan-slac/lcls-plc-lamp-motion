@@ -88,8 +88,8 @@ VAR
     '}
 	M12  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Flow Cell Z
 	
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[FlowCellTheta-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[FlowCellTheta-EL7041]^STM Status^Status^Digital input 2'}
+//	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[FlowCellTheta-EL7041]^STM Status^Status^Digital input 1;
+//                             .bLimitBackwardEnable:=TIIB[FlowCellTheta-EL7041]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
 		pv: TMO:LAMP:MMS:13
     '}
@@ -193,6 +193,10 @@ ELSE
 	M11.bHardwareEnable	:= TRUE;
 	M12.bHardwareEnable	:= TRUE;
 	M13.bHardwareEnable	:= TRUE;
+	
+	//Flow cell theta has no limit switches
+	M13.bLimitForwardEnable := True;
+	M13.bLimitBackwardEnable := True;
 	
 	// fbMotionStage
 	// Gas Jet
