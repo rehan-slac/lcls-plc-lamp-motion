@@ -67,12 +67,33 @@ VAR
     '}
 	M9  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Sample Paddle Z
 	
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[M10-EL7041]^STM Status^Status^Digital input 2;
-                              .bLimitBackwardEnable:=TIIB[M10-EL7041]^STM Status^Status^Digital input 1'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleX-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[GasNeedleX-EL7041]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
 		pv: TMO:LAMP:MMS:10
     '}
-	M10  	: DUT_MotionStage := (bPowerSelf:=TRUE); // M10
+	M10  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Flow Cell X
+	
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:11
+    '}
+	M11  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Flow Cell Y
+	
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:12
+    '}
+	M12  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Flow Cell Z
+	
+//	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[FlowCellTheta-EL7041]^STM Status^Status^Digital input 1;
+//                             .bLimitBackwardEnable:=TIIB[FlowCellTheta-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:13
+    '}
+	M13  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Flow Cell Theta
 	
 	fbMotionStageM1	: FB_MotionStage;
 	fbMotionStageM2	: FB_MotionStage;
@@ -84,12 +105,15 @@ VAR
 	fbMotionStageM8	: FB_MotionStage;
 	fbMotionStageM9	: FB_MotionStage;
 	fbMotionStageM10	: FB_MotionStage;
+	fbMotionStageM11	: FB_MotionStage;
+	fbMotionStageM12	: FB_MotionStage;
+	fbMotionStageM13	: FB_MotionStage;
 	
 	//persistent data
 	fbWritePersistentData	: WritePersistentData;
 	bInit					: BOOL := TRUE;
 	fbWriteDelay			: TON;
-	mcSetPosition			: ARRAY [1..10] of MC_SetPosition;
+	mcSetPosition			: ARRAY [1..13] of MC_SetPosition;
 END_VAR
 
 VAR PERSISTENT 
@@ -102,7 +126,10 @@ VAR PERSISTENT
 	fGasPaddleXPos	: LREAL;
 	fGasPaddleYPos	: LREAL;
 	fGasPaddleZPos	: LREAL;
-	fM10Pos			: LREAL;
+	fFlowCellXPos   : LREAL;
+	fFlowCellYPos   : LREAL;
+	fFlowCellZPos   : LREAL;
+	fFlowCellThetaPos : LREAL;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF bInit THEN
@@ -119,13 +146,17 @@ END_VAR]]></Declaration>
 	mcSetPosition[7](Axis:=M7.Axis, Position:=fGasPaddleXPos, Mode:=FALSE, Execute:=TRUE);
 	mcSetPosition[8](Axis:=M8.Axis, Position:=fGasPaddleyPos, Mode:=FALSE, Execute:=TRUE);
 	mcSetPosition[9](Axis:=M9.Axis, Position:=fGasPaddleZPos, Mode:=FALSE, Execute:=TRUE);
-	mcSetPosition[10](Axis:=M10.Axis, Position:=fM10Pos, Mode:=FALSE, Execute:=TRUE);
+	mcSetPosition[10](Axis:=M10.Axis, Position:=fFLowCellXPos, Mode:=FALSE, Execute:=TRUE);
+	mcSetPosition[11](Axis:=M11.Axis, Position:=fFLowCellYPos, Mode:=FALSE, Execute:=TRUE);
+	mcSetPosition[12](Axis:=M12.Axis, Position:=fFLowCellZPos, Mode:=FALSE, Execute:=TRUE);
+	mcSetPosition[13](Axis:=M13.Axis, Position:=fFLowCellThetaPos, Mode:=FALSE, Execute:=TRUE);
 	if (mcSetPosition[1].Done OR mcSetPosition[1].Error) AND (mcSetPosition[2].Done OR mcSetPosition[2].Error) 
 		AND (mcSetPosition[3].Done OR mcSetPosition[3].Error) AND (mcSetPosition[4].Done OR mcSetPosition[4].Error) 
 		AND (mcSetPosition[5].Done OR mcSetPosition[5].Error) AND (mcSetPosition[6].Done OR mcSetPosition[6].Error) 
 		AND (mcSetPosition[7].Done OR mcSetPosition[7].Error) AND (mcSetPosition[8].Done OR mcSetPosition[8].Error) 
-		AND (mcSetPosition[9].Done OR mcSetPosition[9].Error) 
-        AND (mcSetPosition[10].Done OR mcSetPosition[10].Error)
+		AND (mcSetPosition[9].Done OR mcSetPosition[9].Error) AND (mcSetPosition[10].Done OR mcSetPosition[10].Error)
+		AND (mcSetPosition[11].Done OR mcSetPosition[11].Error) AND (mcSetPosition[12].Done OR mcSetPosition[12].Error)
+		AND (mcSetPosition[3].Done OR mcSetPosition[9].Error)
 		THEN
 		bInit:=FALSE;
 		mcSetPosition[1](Axis:=M1.Axis, Execute:=FALSE);
@@ -138,6 +169,9 @@ END_VAR]]></Declaration>
 		mcSetPosition[8](Axis:=M8.Axis, Execute:=FALSE);
 		mcSetPosition[9](Axis:=M9.Axis, Execute:=FALSE);
 		mcSetPosition[10](Axis:=M10.Axis, Execute:=FALSE);
+		mcSetPosition[11](Axis:=M11.Axis, Execute:=FALSE);
+		mcSetPosition[12](Axis:=M12.Axis, Execute:=FALSE);
+		mcSetPosition[13](Axis:=M13.Axis, Execute:=FALSE);
 	END_IF
 ELSE
 	// Hardware Enable
@@ -154,8 +188,15 @@ ELSE
 	M8.bHardwareEnable	:= TRUE;
 	M9.bHardwareEnable	:= TRUE;
 	
-	//Extra
+	//Extra Flow Cell Manipulator
 	M10.bHardwareEnable	:= TRUE;
+	M11.bHardwareEnable	:= TRUE;
+	M12.bHardwareEnable	:= TRUE;
+	M13.bHardwareEnable	:= TRUE;
+	
+	//Flow cell theta has no limit switches
+	M13.bLimitForwardEnable := True;
+	M13.bLimitBackwardEnable := True;
 	
 	// fbMotionStage
 	// Gas Jet
@@ -173,6 +214,9 @@ ELSE
 	
 	//Extra
 	fbMotionStageM10(stMotionStage:=M10);
+	fbMotionStageM11(stMotionStage:=M11);
+	fbMotionStageM12(stMotionStage:=M12);
+	fbMotionStageM13(stMotionStage:=M13);
 
 	//Keep track of position
 	fGasJetXPos		:= M1.Axis.NcToPlc.ActPos;
@@ -184,7 +228,10 @@ ELSE
 	fGasPaddleXPos	:= M7.Axis.NcToPlc.ActPos;
 	fGasPaddleYPos	:= M8.Axis.NcToPlc.ActPos;
 	fGasPaddleZPos	:= M9.Axis.NcToPlc.ActPos;
-	fM10Pos	:= M10.Axis.NcToPlc.ActPos;
+	fFlowCellXPos	:= M10.Axis.NcToPlc.ActPos;
+	fFlowCellYPos	:= M11.Axis.NcToPlc.ActPos;
+	fFlowCellZPos	:= M12.Axis.NcToPlc.ActPos;
+	fFlowCellThetaPos	:= M13.Axis.NcToPlc.ActPos;
 	IF fbWriteDelay.Q THEN
 		fbWritePersistentData(NETID:='', PORT:=851, START:=TRUE, TMOUT:=T#1S);
 		fbWriteDelay(IN:=FALSE);

@@ -25,7 +25,7 @@
 		<Box File="GasNeedleZ-EL7041.xti" Id="12">
 			<EtherCAT PortABoxInfo="#x0100000b"/>
 		</Box>
-		<Box File="M10-EL7041.xti" Id="40">
+		<Box File="FlowCellTheta-EL7041.xti" Id="40">
 			<EtherCAT PortABoxInfo="#x0100000c"/>
 		</Box>
 		<Box File="Microscope-EL7342.xti" Id="13">

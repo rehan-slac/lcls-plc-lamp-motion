@@ -25,6 +25,9 @@
 		<Axis File="SamplePaddleX.xti" Id="7"/>
 		<Axis File="SamplePaddleY.xti" Id="8"/>
 		<Axis File="SamplePaddleZ.xti" Id="9"/>
-		<Axis File="M10.xti" Id="10"/>
+		<Axis File="FlowCellX.xti" Id="10"/>
+		<Axis File="FlowCellY.xti" Id="11"/>
+		<Axis File="FlowCellZ.xti" Id="12"/>
+		<Axis File="FlowCellTheta.xti" Id="13"/>
 	</NC>
 </TcSmItem>
