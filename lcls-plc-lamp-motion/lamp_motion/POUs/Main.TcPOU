@@ -85,6 +85,35 @@ VAR
     '}
 	M9  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Sample Paddle Z
 	
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[TIXELX-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[TIXELX-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:10
+	'}
+	
+	// TIXEL
+	M10		: DUT_MotionStage := (bPowerSelf:=TRUE,
+    nEnableMode:=ENUM_StageEnableMode.DURING_MOTION,
+    nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // TIXEL X
+	
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:11
+	'}
+	M11		: DUT_MotionStage := (bPowerSelf:=TRUE,
+    nEnableMode:=ENUM_StageEnableMode.DURING_MOTION,
+    nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // TIXEL Y
+	
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:12
+	'}
+	M12		: DUT_MotionStage := (bPowerSelf:=TRUE,
+    nEnableMode:=ENUM_StageEnableMode.DURING_MOTION,
+    nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // TIXEL Z
+	
 	
 	fbMotionStageM1	: FB_MotionStage;
 	fbMotionStageM2	: FB_MotionStage;
@@ -95,6 +124,9 @@ VAR
 	fbMotionStageM7	: FB_MotionStage;
 	fbMotionStageM8	: FB_MotionStage;
 	fbMotionStageM9	: FB_MotionStage;
+	fbMotionStageM10	: FB_MotionStage;
+	fbMotionStageM11	: FB_MotionStage;
+	fbMotionStageM12	: FB_MotionStage;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Hardware Enable
@@ -124,6 +156,15 @@ fbMotionStageM6(stMotionStage:=M6);
 //fbMotionStageM7(stMotionStage:=M7);
 //fbMotionStageM8(stMotionStage:=M8);
 //fbMotionStageM9(stMotionStage:=M9);
+
+// TIXEL
+M10.bHardwareEnable	:= TRUE;
+M11.bHardwareEnable	:= TRUE;
+M12.bHardwareEnable	:= TRUE;
+
+fbMotionStageM10(stMotionStage:=M10);
+fbMotionStageM11(stMotionStage:=M11);
+fbMotionStageM12(stMotionStage:=M12);
 	
 
 ]]></ST>

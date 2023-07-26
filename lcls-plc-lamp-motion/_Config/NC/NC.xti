@@ -29,5 +29,8 @@
 		<Axis File="FlowCellY.xti" Id="11"/>
 		<Axis File="FlowCellZ.xti" Id="12"/>
 		<Axis File="FlowCellTheta.xti" Id="13"/>
+		<Axis File="TIXELX.xti" Id="14"/>
+		<Axis File="TIXELY.xti" Id="15"/>
+		<Axis File="TIXELZ.xti" Id="16"/>
 	</NC>
 </TcSmItem>
