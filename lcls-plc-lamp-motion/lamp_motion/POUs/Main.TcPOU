@@ -92,27 +92,27 @@ VAR
 	'}
 	
 	// TIXEL
-	M10		: DUT_MotionStage := (bPowerSelf:=TRUE,
-    nEnableMode:=ENUM_StageEnableMode.DURING_MOTION,
-    nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // TIXEL X
+//	M10		: DUT_MotionStage := (bPowerSelf:=TRUE,
+//    nEnableMode:=ENUM_StageEnableMode.DURING_MOTION,
+//    nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // TIXEL X
 	
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: TMO:LAMP:MMS:11
-	'}
-	M11		: DUT_MotionStage := (bPowerSelf:=TRUE,
-    nEnableMode:=ENUM_StageEnableMode.DURING_MOTION,
-    nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // TIXEL Y
+//	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 1;
+//                              .bLimitBackwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 2'}
+//	{attribute 'pytmc' := '
+//		pv: TMO:LAMP:MMS:11
+//	'}
+//	M11		: DUT_MotionStage := (bPowerSelf:=TRUE,
+//    nEnableMode:=ENUM_StageEnableMode.DURING_MOTION,
+//    nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // TIXEL Y
 	
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: TMO:LAMP:MMS:12
-	'}
-	M12		: DUT_MotionStage := (bPowerSelf:=TRUE,
-    nEnableMode:=ENUM_StageEnableMode.DURING_MOTION,
-    nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // TIXEL Z
+//	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 1;
+//                              .bLimitBackwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 2'}
+//	{attribute 'pytmc' := '
+//		pv: TMO:LAMP:MMS:12
+//	'}
+//	M12		: DUT_MotionStage := (bPowerSelf:=TRUE,
+//    nEnableMode:=ENUM_StageEnableMode.DURING_MOTION,
+//    nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // TIXEL Z
 	
 	
 	fbMotionStageM1	: FB_MotionStage;
@@ -124,9 +124,9 @@ VAR
 	fbMotionStageM7	: FB_MotionStage;
 	fbMotionStageM8	: FB_MotionStage;
 	fbMotionStageM9	: FB_MotionStage;
-	fbMotionStageM10	: FB_MotionStage;
-	fbMotionStageM11	: FB_MotionStage;
-	fbMotionStageM12	: FB_MotionStage;
+//	fbMotionStageM10	: FB_MotionStage;
+//	fbMotionStageM11	: FB_MotionStage;
+//	fbMotionStageM12	: FB_MotionStage;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Hardware Enable
