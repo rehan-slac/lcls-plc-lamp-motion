@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="Main" Id="{6f4a6b61-6bc5-4c57-90c1-877a33915112}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
@@ -158,13 +158,13 @@ fbMotionStageM6(stMotionStage:=M6);
 //fbMotionStageM9(stMotionStage:=M9);
 
 // TIXEL
-M10.bHardwareEnable	:= TRUE;
-M11.bHardwareEnable	:= TRUE;
-M12.bHardwareEnable	:= TRUE;
+//M10.bHardwareEnable	:= TRUE;
+//M11.bHardwareEnable	:= TRUE;
+//M12.bHardwareEnable	:= TRUE;
 
-fbMotionStageM10(stMotionStage:=M10);
-fbMotionStageM11(stMotionStage:=M11);
-fbMotionStageM12(stMotionStage:=M12);
+//fbMotionStageM10(stMotionStage:=M10);
+//fbMotionStageM11(stMotionStage:=M11);
+//fbMotionStageM12(stMotionStage:=M12);
 	
 
 ]]></ST>

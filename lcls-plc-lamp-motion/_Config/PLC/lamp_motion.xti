@@ -983,7 +983,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{E516B818-5500-4003-87B1-D310F491C5AE}" Name="lamp_motion" PrjFilePath="..\..\lamp_motion\lamp_motion.plcproj" TmcFilePath="..\..\lamp_motion\lamp_motion.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="lamp_motion\lamp_motion.tmc" TmcHash="{B4799E8F-2054-CE8D-EBD9-BE458C7D256D}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="lamp_motion\lamp_motion.tmc" TmcHash="{65C120EE-8C93-ED7A-2B5F-95D84B08C350}">
 			<Name>lamp_motion Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
