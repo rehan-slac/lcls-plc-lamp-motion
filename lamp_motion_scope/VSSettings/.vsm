@@ -5,12 +5,12 @@
   <Children>
     <Node>
       <Title>Scope YT NC Project</Title>
-      <Expanded>False</Expanded>
-      <FileName>C:\Users\tongju\github-repo\tmo\lcls-plc-lamp-motion\lamp_motion_scope\Scope YT NC Project.tcscopex</FileName>
+      <Expanded>True</Expanded>
+      <FileName>C:\Users\jozamudi\Documents\TcXaeShell\TMO\lcls-plc-lamp-motion\lamp_motion_scope\Scope YT NC Project.tcscopex</FileName>
       <Children>
         <Node>
           <Title>DataPool</Title>
-          <Expanded>False</Expanded>
+          <Expanded>True</Expanded>
           <FileName></FileName>
           <Children>
             <Node>
@@ -65,12 +65,12 @@
         </Node>
         <Node>
           <Title>NC Axis 1</Title>
-          <Expanded>False</Expanded>
+          <Expanded>True</Expanded>
           <FileName></FileName>
           <Children>
             <Node>
               <Title>GasJetZPosition</Title>
-              <Expanded>False</Expanded>
+              <Expanded>True</Expanded>
               <FileName></FileName>
               <Children>
                 <Node>
@@ -89,7 +89,7 @@
             </Node>
             <Node>
               <Title>SamplePaddleXPosition</Title>
-              <Expanded>False</Expanded>
+              <Expanded>True</Expanded>
               <FileName></FileName>
               <Children>
                 <Node>
@@ -108,7 +108,7 @@
             </Node>
             <Node>
               <Title>SamplePaddleZPosition</Title>
-              <Expanded>False</Expanded>
+              <Expanded>True</Expanded>
               <FileName></FileName>
               <Children>
                 <Node>
@@ -127,7 +127,7 @@
             </Node>
             <Node>
               <Title>SamplePaddleYPositiion</Title>
-              <Expanded>False</Expanded>
+              <Expanded>True</Expanded>
               <FileName></FileName>
               <Children>
                 <Node>

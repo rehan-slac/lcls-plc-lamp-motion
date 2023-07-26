@@ -85,15 +85,6 @@ VAR
     '}
 	M9  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Sample Paddle Z
 	
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleX-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[GasNeedleX-EL7041]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: TMO:LAMP:MMS:10
-    '}
-	M10  	: DUT_MotionStage := (bPowerSelf:=TRUE,
-    nEnableMode:=ENUM_StageEnableMode.DURING_MOTION,
-//    nEnableMode:=ENUM_StageEnableMode.ALWAYS,
-    nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // M10
 	
 	fbMotionStageM1	: FB_MotionStage;
 	fbMotionStageM2	: FB_MotionStage;
@@ -104,7 +95,6 @@ VAR
 	fbMotionStageM7	: FB_MotionStage;
 	fbMotionStageM8	: FB_MotionStage;
 	fbMotionStageM9	: FB_MotionStage;
-	fbMotionStageM10	: FB_MotionStage;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Hardware Enable
@@ -112,34 +102,29 @@ END_VAR]]></Declaration>
 M1.bHardwareEnable	:= TRUE;
 M2.bHardwareEnable	:= TRUE;
 M3.bHardwareEnable	:= TRUE;
+
+fbMotionStageM1(stMotionStage:=M1);
+fbMotionStageM2(stMotionStage:=M2);
+fbMotionStageM3(stMotionStage:=M3);
+
 // Gas Needle
 M4.bHardwareEnable	:= TRUE;
 M5.bHardwareEnable	:= TRUE;
 M6.bHardwareEnable	:= TRUE;
+
+fbMotionStageM4(stMotionStage:=M4);
+fbMotionStageM5(stMotionStage:=M5);
+fbMotionStageM6(stMotionStage:=M6);
+
 // Sample Paddle
 //M7.bHardwareEnable	:= TRUE;
 //M8.bHardwareEnable	:= TRUE;
 //M9.bHardwareEnable	:= TRUE;
-	
-//Extra
-M10.bHardwareEnable	:= TRUE;
-	
-// fbMotionStage
-// Gas Jet
-fbMotionStageM1(stMotionStage:=M1);
-fbMotionStageM2(stMotionStage:=M2);
-fbMotionStageM3(stMotionStage:=M3);
-// Gas Needle
-fbMotionStageM4(stMotionStage:=M4);
-fbMotionStageM5(stMotionStage:=M5);
-fbMotionStageM6(stMotionStage:=M6);
-// Sample Paddle
+
 //fbMotionStageM7(stMotionStage:=M7);
 //fbMotionStageM8(stMotionStage:=M8);
 //fbMotionStageM9(stMotionStage:=M9);
 	
-//Extra
-fbMotionStageM10(stMotionStage:=M10);
 
 ]]></ST>
     </Implementation>
