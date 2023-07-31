@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="Main" Id="{6f4a6b61-6bc5-4c57-90c1-877a33915112}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
@@ -95,23 +95,23 @@ VAR
     nEnableMode:=ENUM_StageEnableMode.DURING_MOTION,
     nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // TIXEL X
 	
-//	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 1;
-//                              .bLimitBackwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 2'}
-//	{attribute 'pytmc' := '
-//		pv: TMO:LAMP:MMS:11
-//	'}
-//	M11		: DUT_MotionStage := (bPowerSelf:=TRUE,
-//    nEnableMode:=ENUM_StageEnableMode.DURING_MOTION,
-//    nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // TIXEL Y
-	
-//	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 1;
-//                              .bLimitBackwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 2'}
-//	{attribute 'pytmc' := '
-//		pv: TMO:LAMP:MMS:12
-//	'}
-//	M12		: DUT_MotionStage := (bPowerSelf:=TRUE,
-//    nEnableMode:=ENUM_StageEnableMode.DURING_MOTION,
-//    nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // TIXEL Z
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:11
+	'}
+	M11		: DUT_MotionStage := (bPowerSelf:=TRUE,
+    nEnableMode:=ENUM_StageEnableMode.DURING_MOTION,
+    nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // TIXEL Y
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: TMO:LAMP:MMS:12
+	'}
+	M12		: DUT_MotionStage := (bPowerSelf:=TRUE,
+    nEnableMode:=ENUM_StageEnableMode.DURING_MOTION,
+    nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // TIXEL Z
 	
 	
 	fbMotionStageM1	: FB_MotionStage;
@@ -124,8 +124,8 @@ VAR
 	fbMotionStageM8	: FB_MotionStage;
 	fbMotionStageM9	: FB_MotionStage;
 	fbMotionStageM10	: FB_MotionStage;
-//	fbMotionStageM11	: FB_MotionStage;
-//	fbMotionStageM12	: FB_MotionStage;
+	fbMotionStageM11	: FB_MotionStage;
+	fbMotionStageM12	: FB_MotionStage;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Hardware Enable
@@ -158,12 +158,12 @@ fbMotionStageM6(stMotionStage:=M6);
 
 // TIXEL
 M10.bHardwareEnable	:= TRUE;
-//M11.bHardwareEnable	:= TRUE;
-//M12.bHardwareEnable	:= TRUE;
+M11.bHardwareEnable	:= TRUE;
+M12.bHardwareEnable	:= TRUE;
 
 fbMotionStageM10(stMotionStage:=M10);
-//fbMotionStageM11(stMotionStage:=M11);
-//fbMotionStageM12(stMotionStage:=M12);
+fbMotionStageM11(stMotionStage:=M11);
+fbMotionStageM12(stMotionStage:=M12);
 	
 
 ]]></ST>
