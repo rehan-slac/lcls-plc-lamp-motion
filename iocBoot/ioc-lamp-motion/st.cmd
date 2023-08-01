@@ -4,8 +4,8 @@
 #         Project: lcls-plc-lamp-motion.tsproj
 #        PLC name: lamp_motion (lamp_motion Instance)
 # Generated using: pytmc 2.15.1
-# Project version: 972261a
-#    Project hash: 972261a90e27e0f986afdd89fed9a939847de582
+# Project version: d538f6c
+#    Project hash: d538f6c902852110e3a7683cb962052550ad0e2e
 #     PLC IP/host: 172.21.132.58
 #      PLC Net ID: 172.21.132.58.1.1
 #  ** Production mode IOC **
@@ -247,8 +247,8 @@ dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(
 
 epicsEnvSet("AXIS_NO",         "14")
 epicsEnvSet("MOTOR_PREFIX",    "TMO:LAMP:MMS:")
-epicsEnvSet("MOTOR_NAME",      "10")
-epicsEnvSet("DESC",            "Main.M10 / TIXELX")
+epicsEnvSet("MOTOR_NAME",      "14")
+epicsEnvSet("DESC",            "Main.M14 / TIXELX")
 epicsEnvSet("EGU",             "mm")
 epicsEnvSet("PREC",            "3")
 epicsEnvSet("AXISCONFIG",      "")
@@ -262,8 +262,8 @@ dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(
 
 epicsEnvSet("AXIS_NO",         "15")
 epicsEnvSet("MOTOR_PREFIX",    "TMO:LAMP:MMS:")
-epicsEnvSet("MOTOR_NAME",      "11")
-epicsEnvSet("DESC",            "Main.M11 / TIXELY")
+epicsEnvSet("MOTOR_NAME",      "15")
+epicsEnvSet("DESC",            "Main.M15 / TIXELY")
 epicsEnvSet("EGU",             "mm")
 epicsEnvSet("PREC",            "3")
 epicsEnvSet("AXISCONFIG",      "")
@@ -277,8 +277,8 @@ dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(
 
 epicsEnvSet("AXIS_NO",         "16")
 epicsEnvSet("MOTOR_PREFIX",    "TMO:LAMP:MMS:")
-epicsEnvSet("MOTOR_NAME",      "12")
-epicsEnvSet("DESC",            "Main.M12 / TIXELZ")
+epicsEnvSet("MOTOR_NAME",      "16")
+epicsEnvSet("DESC",            "Main.M16 / TIXELZ")
 epicsEnvSet("EGU",             "mm")
 epicsEnvSet("PREC",            "3")
 epicsEnvSet("AXISCONFIG",      "")
@@ -299,7 +299,7 @@ dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:LAMP:MOTION,IDX=1")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:LAMP:MOTION")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:LAMP:MOTION,PROJECT=lcls-plc-lamp-motion.tsproj,HASH=972261a,VERSION=972261a,PYTMC=2.15.1,PLC_HOST=172.21.132.58")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:LAMP:MOTION,PROJECT=lcls-plc-lamp-motion.tsproj,HASH=d538f6c,VERSION=d538f6c,PYTMC=2.15.1,PLC_HOST=172.21.132.58")
 
 #   Tc2_MC2: * (Beckhoff Automation GmbH)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:LAMP:MOTION,DEPENDENCY=Tc2_MC2,VERSION=*,VENDOR=Beckhoff Automation GmbH")
