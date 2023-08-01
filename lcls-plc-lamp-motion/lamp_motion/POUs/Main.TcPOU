@@ -95,9 +95,10 @@ VAR
 	fbMotionStageM7	: FB_MotionStage;
 	fbMotionStageM8	: FB_MotionStage;
 	fbMotionStageM9	: FB_MotionStage;
-	fbMotionStageM10	: FB_MotionStage;
-	fbMotionStageM11	: FB_MotionStage;
-	fbMotionStageM12	: FB_MotionStage;
+	//...//
+	fbMotionStageM14	: FB_MotionStage;
+	fbMotionStageM15	: FB_MotionStage;
+	fbMotionStageM16	: FB_MotionStage;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Hardware Enable
@@ -129,13 +130,13 @@ fbMotionStageM6(stMotionStage:=M6);
 //fbMotionStageM9(stMotionStage:=M9);
 
 // TIXEL
-M10.bHardwareEnable	:= TRUE;
-M11.bHardwareEnable	:= TRUE;
-M12.bHardwareEnable	:= TRUE;
+TIXEL.M14.bHardwareEnable	:= TRUE;
+TIXEL.M15.bHardwareEnable	:= TRUE;
+TIXEL.M16.bHardwareEnable	:= TRUE;
 
-fbMotionStageM10(stMotionStage:=M10);
-fbMotionStageM11(stMotionStage:=M11);
-fbMotionStageM12(stMotionStage:=M12);
+fbMotionStageM14(stMotionStage:=TIXEL.M14);
+fbMotionStageM15(stMotionStage:=TIXEL.M15);
+fbMotionStageM16(stMotionStage:=TIXEL.M16);
 	
 
 ]]></ST>
