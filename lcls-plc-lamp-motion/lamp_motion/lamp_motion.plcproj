@@ -13,6 +13,11 @@
     <Implicit_KindOfTask>{6d2affc4-cc4c-4a8f-9393-0aea61f7b136}</Implicit_KindOfTask>
     <Implicit_Jitter_Distribution>{57cda66f-061d-425b-81f3-efd6029c3179}</Implicit_Jitter_Distribution>
     <LibraryReferences>{88bf9b68-db78-4896-b8f3-eaf3fa28d638}</LibraryReferences>
+    <CombineIds>false</CombineIds>
+    <Released>true</Released>
+    <Company>SLAC</Company>
+    <Title>lcls-plc-lamp-motion</Title>
+    <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="PlcTask.TcTTO">
