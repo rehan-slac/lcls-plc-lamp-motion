@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{92FA96AA-798F-28F3-3627-A81259571290}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{92B43C88-F310-F85A-C72D-DBF1B5D86E45}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</Name>
@@ -39,7 +39,7 @@
       <SubItem>
         <Name>Width</Name>
         <Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
-        <Comment> distance between horizontal slits (x)</Comment>
+        <Comment>distance between horizontal slits (x)</Comment>
         <BitSize>32</BitSize>
         <BitOffs>0</BitOffs>
         <Properties>
@@ -54,7 +54,7 @@
       <SubItem>
         <Name>Height</Name>
         <Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
-        <Comment> distance between vertical slits (y)</Comment>
+        <Comment>distance between vertical slits (y)</Comment>
         <BitSize>32</BitSize>
         <BitOffs>32</BitOffs>
         <Properties>
@@ -69,7 +69,7 @@
       <SubItem>
         <Name>xOK</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-        <Comment> status of aperture, false if error or in motion</Comment>
+        <Comment>status of aperture, false if error or in motion</Comment>
         <BitSize>8</BitSize>
         <BitOffs>64</BitOffs>
         <Properties>
@@ -35291,8 +35291,8 @@ External Setpoint Generation:
               <Property>
                 <Name>pytmc</Name>
                 <Value>
-		pv: TMO:LAMP:MMS:01
-	</Value>
+        pv: TMO:LAMP:MMS:01
+    </Value>
               </Property>
             </Properties>
             <BitOffs>634649472</BitOffs>
@@ -35325,8 +35325,8 @@ External Setpoint Generation:
               <Property>
                 <Name>pytmc</Name>
                 <Value>
-		pv: TMO:LAMP:MMS:02
-	</Value>
+        pv: TMO:LAMP:MMS:02
+    </Value>
               </Property>
             </Properties>
             <BitOffs>634670720</BitOffs>
@@ -35359,8 +35359,8 @@ External Setpoint Generation:
               <Property>
                 <Name>pytmc</Name>
                 <Value>
-		pv: TMO:LAMP:MMS:03
-	</Value>
+        pv: TMO:LAMP:MMS:03
+    </Value>
               </Property>
             </Properties>
             <BitOffs>634691968</BitOffs>
@@ -35393,8 +35393,8 @@ External Setpoint Generation:
               <Property>
                 <Name>pytmc</Name>
                 <Value>
-		pv: TMO:LAMP:MMS:04
-	</Value>
+        pv: TMO:LAMP:MMS:04
+    </Value>
               </Property>
             </Properties>
             <BitOffs>634713216</BitOffs>
@@ -35427,8 +35427,8 @@ External Setpoint Generation:
               <Property>
                 <Name>pytmc</Name>
                 <Value>
-		pv: TMO:LAMP:MMS:05
-	</Value>
+        pv: TMO:LAMP:MMS:05
+    </Value>
               </Property>
             </Properties>
             <BitOffs>634734464</BitOffs>
@@ -35461,8 +35461,8 @@ External Setpoint Generation:
               <Property>
                 <Name>pytmc</Name>
                 <Value>
-		pv: TMO:LAMP:MMS:06
-	</Value>
+        pv: TMO:LAMP:MMS:06
+    </Value>
               </Property>
             </Properties>
             <BitOffs>634755712</BitOffs>
@@ -35487,8 +35487,8 @@ External Setpoint Generation:
               <Property>
                 <Name>pytmc</Name>
                 <Value>
-		pv: TMO:LAMP:MMS:07
-	</Value>
+        pv: TMO:LAMP:MMS:07
+    </Value>
               </Property>
             </Properties>
             <BitOffs>634776960</BitOffs>
@@ -35513,8 +35513,8 @@ External Setpoint Generation:
               <Property>
                 <Name>pytmc</Name>
                 <Value>
-		pv: TMO:LAMP:MMS:08
-	</Value>
+        pv: TMO:LAMP:MMS:08
+    </Value>
               </Property>
             </Properties>
             <BitOffs>634798208</BitOffs>
@@ -35539,7 +35539,7 @@ External Setpoint Generation:
               <Property>
                 <Name>pytmc</Name>
                 <Value>
-		pv: TMO:LAMP:MMS:09
+        pv: TMO:LAMP:MMS:09
     </Value>
               </Property>
             </Properties>
@@ -35891,7 +35891,7 @@ External Setpoint Generation:
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2023-07-27T09:32:28</Value>
+          <Value>2023-09-15T10:58:52</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
