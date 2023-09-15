@@ -85,6 +85,29 @@ VAR
     '}
     M9  	: DUT_MotionStage := (bPowerSelf:=TRUE); // Sample Paddle Z
 
+    // ...//
+    // TIXEL
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[TIXELX-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[TIXELX-EL7041]^STM Status^Status^Digital input 2'}
+    {attribute 'pytmc' := '
+        pv: TMO:LAMP:MMS:14
+    '}
+    M14		: DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.DURING_MOTION); // TIXEL X
+
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 2'}
+    {attribute 'pytmc' := '
+        pv: TMO:LAMP:MMS:15
+    '}
+    M15		: DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.DURING_MOTION); // TIXEL Y
+
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 2'}
+    {attribute 'pytmc' := '
+        pv: TMO:LAMP:MMS:16
+    '}
+    M16		: DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.DURING_MOTION); // TIXEL Z
+
 
     fbMotionStageM1	: FB_MotionStage;
     fbMotionStageM2	: FB_MotionStage;
@@ -95,6 +118,10 @@ VAR
     fbMotionStageM7	: FB_MotionStage;
     fbMotionStageM8	: FB_MotionStage;
     fbMotionStageM9	: FB_MotionStage;
+    //...//
+    fbMotionStageM14	: FB_MotionStage;
+    fbMotionStageM15	: FB_MotionStage;
+    fbMotionStageM16	: FB_MotionStage;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Hardware Enable
@@ -124,6 +151,15 @@ fbMotionStageM6(stMotionStage:=M6);
 //fbMotionStageM7(stMotionStage:=M7);
 //fbMotionStageM8(stMotionStage:=M8);
 //fbMotionStageM9(stMotionStage:=M9);
+
+// TIXEL
+M14.bHardwareEnable	:= TRUE;
+M15.bHardwareEnable	:= TRUE;
+M16.bHardwareEnable	:= TRUE;
+
+fbMotionStageM14(stMotionStage:=M14);
+fbMotionStageM15(stMotionStage:=M15);
+fbMotionStageM16(stMotionStage:=M16);
 
 
 ]]></ST>

@@ -1327,7 +1327,6 @@ External Setpoint Generation:
 			<General UnitName="Degree"/>
 			<Velo Maximum="10"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
-			<ParameterChanged>18</ParameterChanged>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="1">
 			<EncPara ScaleFactorNumerator="0.0003125">
