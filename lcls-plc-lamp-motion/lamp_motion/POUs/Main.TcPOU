@@ -54,8 +54,8 @@ VAR
 //    nEnableMode:=ENUM_StageEnableMode.ALWAYS,
     nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // Gas Needle Y
 
-    {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 2;
-                              .bLimitBackwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 1'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 2'}
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:06
     '}
