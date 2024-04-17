@@ -88,24 +88,24 @@ VAR
     // ...//
     // TIXEL
     {attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[TIXELX-EL7041]^STM Status^Status^Digital input 1;
-                              	.bLimitBackwardEnable:=TIIB[TIXELX-EL7041]^STM Status^Status^Digital input 2';
-								.nRawEncoderULINT:=TIIB[TIXELXY_ENC-EL5042]^FB Inputs Channel 1^Position'}
+                                  .bLimitBackwardEnable:=TIIB[TIXELX-EL7041]^STM Status^Status^Digital input 2';
+                                .nRawEncoderULINT:=TIIB[TIXELXY_ENC-EL5042]^FB Inputs Channel 1^Position'}
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:14
     '}
     M14		: DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.DURING_MOTION); // TIXEL X
 
     {attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 1;
-                              	.bLimitBackwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 2';
-								.nRawEncoderULINT:=TIIB[TIXELXY_ENC-EL5042]^FB Inputs Channel 2^Position'}
+                                  .bLimitBackwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 2';
+                                .nRawEncoderULINT:=TIIB[TIXELXY_ENC-EL5042]^FB Inputs Channel 2^Position'}
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:15
     '}
     M15		: DUT_MotionStage := (bPowerSelf:=TRUE, nEnableMode:=ENUM_StageEnableMode.DURING_MOTION); // TIXEL Y
 
     {attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 1;
-                              	.bLimitBackwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 2';
-								.nRawEncoderULINT:=TIIB[TIXELZ_ENC-EL5042]^FB Inputs Channel 1^Position'}
+                                  .bLimitBackwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 2';
+                                .nRawEncoderULINT:=TIIB[TIXELZ_ENC-EL5042]^FB Inputs Channel 1^Position'}
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:16
     '}
