@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{E2B30C9A-2DD4-AD24-BFE9-4D52CAFB984A}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{F56C6B30-D206-910D-8BC3-68C12E115E52}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</Name>
@@ -103,9 +103,9 @@
             <Name>pytmc</Name>
             <Value>pv: Transmission
             io: i
-			field: HOPR 1;
-			field: LOPR 0;
-			field: PREC 2;
+            field: HOPR 1;
+            field: LOPR 0;
+            field: PREC 2;
         </Value>
           </Property>
         </Properties>
@@ -8124,11 +8124,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>FindTestSuiteInstancePath</Name>
@@ -8387,11 +8382,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_BYTE</Name>
@@ -8493,11 +8483,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8657,11 +8642,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_LTIME</Name>
@@ -8784,11 +8764,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8930,11 +8905,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -9696,11 +9666,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>SetHasStartedRunning</Name>
@@ -9861,11 +9826,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>GetHasStartedRunning</Name>
@@ -9968,11 +9928,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10127,11 +10082,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_DINT</Name>
@@ -10254,11 +10204,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10434,11 +10379,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10721,11 +10661,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -11522,11 +11457,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_UDINT</Name>
@@ -11618,11 +11548,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -27567,7 +27492,7 @@ External Setpoint Generation:
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>80412672</ByteSize>
+          <ByteSize>80478208</ByteSize>
           <Symbol>
             <Name>Main.M1.Axis.NcToPlc</Name>
             <BitSize>2048</BitSize>
@@ -29433,7 +29358,7 @@ External Setpoint Generation:
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>80412672</ByteSize>
+          <ByteSize>80478208</ByteSize>
           <Symbol>
             <Name>Main.M1.Axis.PlcToNc</Name>
             <BitSize>1024</BitSize>
@@ -30003,7 +29928,7 @@ External Setpoint Generation:
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>80412672</ByteSize>
+          <ByteSize>80478208</ByteSize>
           <Symbol>
             <Name>MOTION_GVL.stUnknownState</Name>
             <BitSize>2944</BitSize>
@@ -35015,7 +34940,7 @@ External Setpoint Generation:
                 <Name>pytmc</Name>
                 <Value>
         pv: @(PREFIX)RequestedBP
-		io: i
+        io: i
         archive: 1Hz monitor
     </Value>
               </Property>
@@ -35035,7 +34960,7 @@ External Setpoint Generation:
                 <Name>pytmc</Name>
                 <Value>
         pv: @(PREFIX)CurrentBP
-		io: i
+        io: i
         archive: 1Hz monitor
     </Value>
               </Property>
@@ -35058,7 +34983,7 @@ External Setpoint Generation:
                 <Name>pytmc</Name>
                 <Value>
         pv: @(PREFIX)eVRangeCnst
-		io: i
+        io: i
         archive: 1Hz monitor
         field: DESC Active eV Range constants
         field: EGU eV
@@ -35213,7 +35138,7 @@ External Setpoint Generation:
                 <Name>pytmc</Name>
                 <Value>
         pv: @(PREFIX)FullBeamCnst
-		io: i
+        io: i
         archive: 1Hz monitor
         field: DESC Full beam constant
     </Value>
@@ -35233,7 +35158,7 @@ External Setpoint Generation:
                 <Name>pytmc</Name>
                 <Value>
         pv: @(PREFIX)0RateBeamCnst
-		io: i
+        io: i
         archive: 1Hz monitor
         field: DESC 0-rate beam constant
     </Value>
@@ -35248,10 +35173,10 @@ External Setpoint Generation:
             <Name>PMPS_GVL.cnMaxStateArrayLen</Name>
             <Comment>  {attribute 'pytmc' := '
         pv: @(PREFIX)SafeBeamCnst
-		io: i
+        io: i
         archive: 1Hz monitor
         field: DESC Safe beam constant
-    '} 
+    '}
    cstSafeBeam    :    ST_BeamParams := (
         nTran := 0,
         neVRange := 0,
@@ -35336,7 +35261,7 @@ External Setpoint Generation:
             <Name>PMPS_GVL.reVHyst</Name>
             <Comment>///////////////////////
 ///////////////////////
-////////////////////////////////////		</Comment>
+////////////////////////////////////</Comment>
             <BitSize>32</BitSize>
             <BaseType>REAL</BaseType>
             <Default>
@@ -35347,7 +35272,7 @@ External Setpoint Generation:
                 <Name>pytmc</Name>
                 <Value>
         pv: @(PREFIX)eVRangeHyst
-		io: i
+        io: i
         archive: 1Hz monitor
         field: DESC eV Range hystersis
         field: EGU eV
@@ -35502,7 +35427,7 @@ External Setpoint Generation:
                 <Name>pytmc</Name>
                 <Value>
         pv: @(PREFIX)L:eVRangeCnst
-		io: i
+        io: i
         archive: 1Hz monitor
         field: DESC eV Range constants
         field: EGU eV
@@ -35657,7 +35582,7 @@ External Setpoint Generation:
                 <Name>pytmc</Name>
                 <Value>
         pv: @(PREFIX)K:eVRangeCnst
-		io: i
+        io: i
         archive: 1Hz monitor
         field: DESC eV Range constants
         field: EGU eV
@@ -36169,8 +36094,8 @@ External Setpoint Generation:
             <Properties>
               <Property>
                 <Name>TcLinkTo</Name>
-                <Value>.bLimitForwardEnable:=TIIB[TIXELX-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[TIXELX-EL7041]^STM Status^Status^Digital input 2</Value>
+                <Value>	.bLimitForwardEnable:=TIIB[TIXELX-EL7041]^STM Status^Status^Digital input 1;
+                              	.bLimitBackwardEnable:=TIIB[TIXELX-EL7041]^STM Status^Status^Digital input 2</Value>
               </Property>
               <Property>
                 <Name>pytmc</Name>
@@ -36199,8 +36124,8 @@ External Setpoint Generation:
             <Properties>
               <Property>
                 <Name>TcLinkTo</Name>
-                <Value>.bLimitForwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 2</Value>
+                <Value>	.bLimitForwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 1;
+                              	.bLimitBackwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 2</Value>
               </Property>
               <Property>
                 <Name>pytmc</Name>
@@ -36229,8 +36154,8 @@ External Setpoint Generation:
             <Properties>
               <Property>
                 <Name>TcLinkTo</Name>
-                <Value>.bLimitForwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 2</Value>
+                <Value>	.bLimitForwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 1;
+                              	.bLimitBackwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 2</Value>
               </Property>
               <Property>
                 <Name>pytmc</Name>
@@ -36534,14 +36459,14 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>638532704</BitOffs>
+            <BitOffs>638548320</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">4</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>0</ContextId>
-          <ByteSize>80412672</ByteSize>
+          <ByteSize>80478208</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -36606,7 +36531,7 @@ External Setpoint Generation:
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2023-09-28T13:49:11</Value>
+          <Value>2024-04-17T11:47:41</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>

@@ -3,9 +3,9 @@
 #
 #         Project: lcls-plc-lamp-motion.tsproj
 #        PLC name: lamp_motion (lamp_motion Instance)
-# Generated using: pytmc 2.15.1
-# Project version: d538f6c
-#    Project hash: d538f6c902852110e3a7683cb962052550ad0e2e
+# Generated using: pytmc 2.16.0
+# Project version: 0d3b914
+#    Project hash: 0d3b9149f7d9723e53dcd1a8301d787de83e1a16
 #     PLC IP/host: 172.21.132.58
 #      PLC Net ID: 172.21.132.58.1.1
 #  ** Production mode IOC **
@@ -299,7 +299,7 @@ dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:LAMP:MOTION,IDX=1")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:LAMP:MOTION")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:LAMP:MOTION,PROJECT=lcls-plc-lamp-motion.tsproj,HASH=d538f6c,VERSION=d538f6c,PYTMC=2.15.1,PLC_HOST=172.21.132.58")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:LAMP:MOTION,PROJECT=lcls-plc-lamp-motion.tsproj,HASH=0d3b914,VERSION=0d3b914,PYTMC=2.16.0,PLC_HOST=172.21.132.58")
 
 #   Tc2_MC2: * (Beckhoff Automation GmbH)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:LAMP:MOTION,DEPENDENCY=Tc2_MC2,VERSION=*,VENDOR=Beckhoff Automation GmbH")
