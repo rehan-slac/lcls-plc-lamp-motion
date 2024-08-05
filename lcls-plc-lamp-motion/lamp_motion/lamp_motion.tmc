@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{F56C6B30-D206-910D-8BC3-68C12E115E52}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{ACA43D86-203D-BEE1-5691-231381F9ECF0}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</Name>
@@ -740,31 +740,31 @@
         <Name>bBusy</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>79830040</GetCodeOffs>
+        <GetCodeOffs>79830076</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>bError</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>79830076</GetCodeOffs>
+        <GetCodeOffs>79830112</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>hrErrorCode</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>79830084</GetCodeOffs>
+        <GetCodeOffs>79830120</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nStringSize</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>79830064</GetCodeOffs>
+        <GetCodeOffs>79830100</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sResult</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>79830080</GetCodeOffs>
+        <GetCodeOffs>79830116</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="0">__getbBusy</Name>
@@ -2003,15 +2003,15 @@
         <Name>nId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>79829980</GetCodeOffs>
-        <SetCodeOffs>79830004</SetCodeOffs>
+        <GetCodeOffs>79830016</GetCodeOffs>
+        <SetCodeOffs>79830040</SetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>79830020</GetCodeOffs>
-        <SetCodeOffs>79830032</SetCodeOffs>
+        <GetCodeOffs>79830056</GetCodeOffs>
+        <SetCodeOffs>79830068</SetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>ExtendName</Name>
@@ -2257,37 +2257,37 @@
         <Name>eSeverity</Name>
         <Type GUID="{B57D3F4A-0836-49B0-81C3-BED5F4817EC9}">TcEventSeverity</Type>
         <BitSize>16</BitSize>
-        <GetCodeOffs>79830132</GetCodeOffs>
+        <GetCodeOffs>79830168</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>ipSourceInfo</Name>
         <Type Namespace="lcls_twincat_motion.LCLS_General.Tc3_EventLogger">I_TcSourceInfo</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>79830112</GetCodeOffs>
+        <GetCodeOffs>79830148</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nEventId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>79830200</GetCodeOffs>
+        <GetCodeOffs>79830236</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nUniqueId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>79830204</GetCodeOffs>
+        <GetCodeOffs>79830240</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventClassName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>79830160</GetCodeOffs>
+        <GetCodeOffs>79830196</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventText</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>79830208</GetCodeOffs>
+        <GetCodeOffs>79830244</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>EqualsToEventClass</Name>
@@ -2347,7 +2347,7 @@
         <ReturnBitSize>32</ReturnBitSize>
       </Method>
       <Method>
-        <Name>UpdateLangId</Name>
+        <Name>OnArgumentsChanged</Name>
       </Method>
       <Method>
         <Name RpcEnable="plc" VTableIndex="8">__getipSourceInfo</Name>
@@ -2548,9 +2548,6 @@
         </Local>
       </Method>
       <Method>
-        <Name>OnArgumentsChanged</Name>
-      </Method>
-      <Method>
         <Name RpcEnable="plc" VTableIndex="11">__getsEventClassName</Name>
         <ReturnType RpcDirection="out">STRING(255)</ReturnType>
         <ReturnBitSize>2048</ReturnBitSize>
@@ -2711,6 +2708,9 @@
             </Property>
           </Properties>
         </Local>
+      </Method>
+      <Method>
+        <Name>UpdateLangId</Name>
       </Method>
       <Method>
         <Name>EqualsToEventEntryEx</Name>
@@ -2886,7 +2886,7 @@
         <Name>nTimeSent</Name>
         <Type>ULINT</Type>
         <BitSize>64</BitSize>
-        <GetCodeOffs>79830232</GetCodeOffs>
+        <GetCodeOffs>79830268</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>SetJsonAttribute</Name>
@@ -4695,18 +4695,19 @@
         <ReturnBitSize>32</ReturnBitSize>
       </Method>
       <Method>
-        <Name>Open</Name>
+        <Name>Write</Name>
         <ReturnType Namespace="lcls_twincat_motion.LCLS_General.TcUnit.SysDir.SysTypes">RTS_IEC_RESULT</ReturnType>
         <ReturnBitSize>32</ReturnBitSize>
         <Parameter>
-          <Name>FileName</Name>
-          <Comment> File name can contain an absolute or relative path to the file. Path entries must be separated with a Slash (/)</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
+          <Name>BufferPointer</Name>
+          <Comment> Call with ADR();</Comment>
+          <Type PointerTo="1">BYTE</Type>
+          <BitSize>32</BitSize>
         </Parameter>
         <Parameter>
-          <Name>FileAccessMode</Name>
-          <Type Namespace="lcls_twincat_motion.LCLS_General.TcUnit.SysFile">ACCESS_MODE</Type>
+          <Name>Size</Name>
+          <Comment> Call with SIZEOF();</Comment>
+          <Type>UDINT</Type>
           <BitSize>32</BitSize>
         </Parameter>
       </Method>
@@ -4722,19 +4723,18 @@
         </Parameter>
       </Method>
       <Method>
-        <Name>Write</Name>
+        <Name>Open</Name>
         <ReturnType Namespace="lcls_twincat_motion.LCLS_General.TcUnit.SysDir.SysTypes">RTS_IEC_RESULT</ReturnType>
         <ReturnBitSize>32</ReturnBitSize>
         <Parameter>
-          <Name>BufferPointer</Name>
-          <Comment> Call with ADR();</Comment>
-          <Type PointerTo="1">BYTE</Type>
-          <BitSize>32</BitSize>
+          <Name>FileName</Name>
+          <Comment> File name can contain an absolute or relative path to the file. Path entries must be separated with a Slash (/)</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
         </Parameter>
         <Parameter>
-          <Name>Size</Name>
-          <Comment> Call with SIZEOF();</Comment>
-          <Type>UDINT</Type>
+          <Name>FileAccessMode</Name>
+          <Type Namespace="lcls_twincat_motion.LCLS_General.TcUnit.SysFile">ACCESS_MODE</Type>
           <BitSize>32</BitSize>
         </Parameter>
       </Method>
@@ -4918,88 +4918,6 @@
         </Properties>
       </Method>
       <Method>
-        <Name>Clear</Name>
-        <Local>
-          <Name>Count</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc" VTableIndex="5">__setAppend</Name>
-        <Parameter>
-          <Name>Append</Name>
-          <Comment>
-    Appends a string to the buffer
-</Comment>
-          <Type Namespace="Tc2_System" RpcDirection="in">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>ByteIn</Name>
-          <Type PointerTo="1">BYTE</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>ByteBuffer</Name>
-          <Type PointerTo="1">BYTE</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc" VTableIndex="0">__getBufferSize</Name>
-        <ReturnType RpcDirection="out">UDINT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Local>
-          <Name>BufferSize</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc" VTableIndex="6">__setLength</Name>
-        <Parameter>
-          <Name>Length</Name>
-          <Comment>
-    Gets/Sets the current length (in bytes) of the streambuffer
-</Comment>
-          <Type RpcDirection="in">UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name>SetBuffer</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>PointerToBufferAddress</Name>
-          <Comment> Set buffer address (ADR ...)</Comment>
-          <Type PointerTo="1">BYTE</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>SizeOfBuffer</Name>
-          <Comment> Set buffer size (SIZEOF ...)</Comment>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
         <Name>Copy</Name>
         <ReturnType Namespace="Tc2_System">T_MaxString</ReturnType>
         <ReturnBitSize>2048</ReturnBitSize>
@@ -5055,6 +4973,88 @@
           <Type>UDINT</Type>
           <BitSize>32</BitSize>
         </Local>
+      </Method>
+      <Method>
+        <Name>Clear</Name>
+        <Local>
+          <Name>Count</Name>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name RpcEnable="plc" VTableIndex="6">__setLength</Name>
+        <Parameter>
+          <Name>Length</Name>
+          <Comment>
+    Gets/Sets the current length (in bytes) of the streambuffer
+</Comment>
+          <Type RpcDirection="in">UDINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Properties>
+          <Property>
+            <Name>property</Name>
+          </Property>
+        </Properties>
+      </Method>
+      <Method>
+        <Name RpcEnable="plc" VTableIndex="0">__getBufferSize</Name>
+        <ReturnType RpcDirection="out">UDINT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
+        <Local>
+          <Name>BufferSize</Name>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Properties>
+          <Property>
+            <Name>property</Name>
+          </Property>
+        </Properties>
+      </Method>
+      <Method>
+        <Name>SetBuffer</Name>
+        <ReturnType>BOOL</ReturnType>
+        <ReturnBitSize>8</ReturnBitSize>
+        <Parameter>
+          <Name>PointerToBufferAddress</Name>
+          <Comment> Set buffer address (ADR ...)</Comment>
+          <Type PointerTo="1">BYTE</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>SizeOfBuffer</Name>
+          <Comment> Set buffer size (SIZEOF ...)</Comment>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name RpcEnable="plc" VTableIndex="5">__setAppend</Name>
+        <Parameter>
+          <Name>Append</Name>
+          <Comment>
+    Appends a string to the buffer
+</Comment>
+          <Type Namespace="Tc2_System" RpcDirection="in">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>ByteIn</Name>
+          <Type PointerTo="1">BYTE</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>ByteBuffer</Name>
+          <Type PointerTo="1">BYTE</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Properties>
+          <Property>
+            <Name>property</Name>
+          </Property>
+        </Properties>
       </Method>
       <Properties>
         <Property>
@@ -5253,6 +5253,9 @@
         </Parameter>
       </Method>
       <Method>
+        <Name>ToStartBuffer</Name>
+      </Method>
+      <Method>
         <Name>NewTag</Name>
         <Parameter>
           <Name>Name</Name>
@@ -5271,22 +5274,6 @@
         </Local>
       </Method>
       <Method>
-        <Name>WriteDocumentHeader</Name>
-        <Parameter>
-          <Name>Header</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>NewComment</Name>
-        <Parameter>
-          <Name>Comment</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
         <Name RpcEnable="plc" VTableIndex="2">__getLength</Name>
         <ReturnType RpcDirection="out">UDINT</ReturnType>
         <ReturnBitSize>32</ReturnBitSize>
@@ -5302,9 +5289,20 @@
         </Properties>
       </Method>
       <Method>
+        <Name>ClearBuffer</Name>
+      </Method>
+      <Method>
         <Name>NewTagData</Name>
         <Parameter>
           <Name>Data</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>NewComment</Name>
+        <Parameter>
+          <Name>Comment</Name>
           <Type Namespace="Tc2_System">T_MaxString</Type>
           <BitSize>2048</BitSize>
         </Parameter>
@@ -5325,10 +5323,12 @@
         </Parameter>
       </Method>
       <Method>
-        <Name>ClearBuffer</Name>
-      </Method>
-      <Method>
-        <Name>ToStartBuffer</Name>
+        <Name>WriteDocumentHeader</Name>
+        <Parameter>
+          <Name>Header</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
       </Method>
       <Properties>
         <Property>
@@ -5688,6 +5688,11 @@
         <Name>SetFailed</Name>
       </Method>
       <Method>
+        <Name>GetTestOrder</Name>
+        <ReturnType>UINT (0..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</ReturnType>
+        <ReturnBitSize>16</ReturnBitSize>
+      </Method>
+      <Method>
         <Name>SetName</Name>
         <Parameter>
           <Name>Name</Name>
@@ -5699,14 +5704,6 @@
         <Name>GetName</Name>
         <ReturnType Namespace="Tc2_System">T_MaxString</ReturnType>
         <ReturnBitSize>2048</ReturnBitSize>
-      </Method>
-      <Method>
-        <Name>SetNumberOfAssertions</Name>
-        <Parameter>
-          <Name>NoOfAssertions</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
       </Method>
       <Method>
         <Name>SetTestOrder</Name>
@@ -5722,9 +5719,9 @@
         <ReturnBitSize>8</ReturnBitSize>
       </Method>
       <Method>
-        <Name>GetNumberOfAssertions</Name>
-        <ReturnType>UINT</ReturnType>
-        <ReturnBitSize>16</ReturnBitSize>
+        <Name>IsFailed</Name>
+        <ReturnType>BOOL</ReturnType>
+        <ReturnBitSize>8</ReturnBitSize>
       </Method>
       <Method>
         <Name>SetFinished</Name>
@@ -5761,14 +5758,17 @@
         <ReturnBitSize>8</ReturnBitSize>
       </Method>
       <Method>
-        <Name>GetTestOrder</Name>
-        <ReturnType>UINT (0..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</ReturnType>
+        <Name>GetNumberOfAssertions</Name>
+        <ReturnType>UINT</ReturnType>
         <ReturnBitSize>16</ReturnBitSize>
       </Method>
       <Method>
-        <Name>IsFailed</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
+        <Name>SetNumberOfAssertions</Name>
+        <Parameter>
+          <Name>NoOfAssertions</Name>
+          <Type>UINT</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
       </Method>
       <Properties>
         <Property>
@@ -6950,35 +6950,52 @@
         <BitOffs>24640288</BitOffs>
       </SubItem>
       <Method>
-        <Name>CopyDetectionCountAndResetDetectionCountInThisCycle</Name>
-        <Local>
-          <Name>IteratorCounter</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>GetNumberOfAssertsForTest</Name>
-        <ReturnType>UINT</ReturnType>
-        <ReturnBitSize>16</ReturnBitSize>
+        <Name>AddAssertResult</Name>
         <Parameter>
-          <Name>CompleteTestInstancePath</Name>
+          <Name>ExpectedSize</Name>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>ExpectedTypeClass</Name>
+          <Type Namespace="lcls_twincat_motion.LCLS_General.TcUnit.IBaseLibrary">TypeClass</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>ExpectedValue</Name>
+          <Type PointerTo="1">BYTE</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>ActualSize</Name>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>ActualTypeClass</Name>
+          <Type Namespace="lcls_twincat_motion.LCLS_General.TcUnit.IBaseLibrary">TypeClass</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>ActualValue</Name>
+          <Type PointerTo="1">BYTE</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
           <Type Namespace="Tc2_System">T_MaxString</Type>
           <BitSize>2048</BitSize>
         </Parameter>
-        <Local>
-          <Name>Counter</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Local>
-        <Local>
-          <Name>NumberOfAsserts</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Local>
+        <Parameter>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
       </Method>
       <Method>
-        <Name>CreateAssertResultInstance</Name>
+        <Name>GetDetectionCountThisCycle</Name>
+        <ReturnType>UINT</ReturnType>
+        <ReturnBitSize>16</ReturnBitSize>
         <Parameter>
           <Name>ExpectedSize</Name>
           <Type>UDINT</Type>
@@ -7026,9 +7043,27 @@
         </Local>
       </Method>
       <Method>
-        <Name>GetDetectionCountThisCycle</Name>
+        <Name>GetNumberOfAssertsForTest</Name>
         <ReturnType>UINT</ReturnType>
         <ReturnBitSize>16</ReturnBitSize>
+        <Parameter>
+          <Name>CompleteTestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>Counter</Name>
+          <Type>UINT</Type>
+          <BitSize>16</BitSize>
+        </Local>
+        <Local>
+          <Name>NumberOfAsserts</Name>
+          <Type>UINT</Type>
+          <BitSize>16</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>CreateAssertResultInstance</Name>
         <Parameter>
           <Name>ExpectedSize</Name>
           <Type>UDINT</Type>
@@ -7225,47 +7260,12 @@
         </Local>
       </Method>
       <Method>
-        <Name>AddAssertResult</Name>
-        <Parameter>
-          <Name>ExpectedSize</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>ExpectedTypeClass</Name>
-          <Type Namespace="lcls_twincat_motion.LCLS_General.TcUnit.IBaseLibrary">TypeClass</Type>
+        <Name>CopyDetectionCountAndResetDetectionCountInThisCycle</Name>
+        <Local>
+          <Name>IteratorCounter</Name>
+          <Type>UINT</Type>
           <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>ExpectedValue</Name>
-          <Type PointerTo="1">BYTE</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>ActualSize</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>ActualTypeClass</Name>
-          <Type Namespace="lcls_twincat_motion.LCLS_General.TcUnit.IBaseLibrary">TypeClass</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>ActualValue</Name>
-          <Type PointerTo="1">BYTE</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
+        </Local>
       </Method>
       <Properties>
         <Property>
@@ -7411,37 +7411,7 @@
         <BitOffs>8480224</BitOffs>
       </SubItem>
       <Method>
-        <Name>CreateAssertResultInstance</Name>
-        <Parameter>
-          <Name>ExpectedsSize</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>ExpectedsTypeClass</Name>
-          <Type Namespace="lcls_twincat_motion.LCLS_General.TcUnit.IBaseLibrary">TypeClass</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>ActualsSize</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>ActualsTypeClass</Name>
-          <Type Namespace="lcls_twincat_motion.LCLS_General.TcUnit.IBaseLibrary">TypeClass</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
+        <Name>CopyDetectionCountAndResetDetectionCountInThisCycle</Name>
         <Local>
           <Name>IteratorCounter</Name>
           <Type>UINT</Type>
@@ -7449,9 +7419,7 @@
         </Local>
       </Method>
       <Method>
-        <Name>GetDetectionCountThisCycle</Name>
-        <ReturnType>UINT</ReturnType>
-        <ReturnBitSize>16</ReturnBitSize>
+        <Name>CreateAssertResultInstance</Name>
         <Parameter>
           <Name>ExpectedsSize</Name>
           <Type>UDINT</Type>
@@ -7638,7 +7606,39 @@
         </Local>
       </Method>
       <Method>
-        <Name>CopyDetectionCountAndResetDetectionCountInThisCycle</Name>
+        <Name>GetDetectionCountThisCycle</Name>
+        <ReturnType>UINT</ReturnType>
+        <ReturnBitSize>16</ReturnBitSize>
+        <Parameter>
+          <Name>ExpectedsSize</Name>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>ExpectedsTypeClass</Name>
+          <Type Namespace="lcls_twincat_motion.LCLS_General.TcUnit.IBaseLibrary">TypeClass</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>ActualsSize</Name>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>ActualsTypeClass</Name>
+          <Type Namespace="lcls_twincat_motion.LCLS_General.TcUnit.IBaseLibrary">TypeClass</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
         <Local>
           <Name>IteratorCounter</Name>
           <Type>UINT</Type>
@@ -8193,18 +8193,18 @@
         </Local>
       </Method>
       <Method>
-        <Name>AssertEquals_BYTE</Name>
+        <Name>AssertEquals_DWORD</Name>
         <Parameter>
           <Name>Expected</Name>
-          <Comment> BYTE expected value</Comment>
-          <Type>BYTE</Type>
-          <BitSize>8</BitSize>
+          <Comment> DWORD expected value</Comment>
+          <Type>DWORD</Type>
+          <BitSize>32</BitSize>
         </Parameter>
         <Parameter>
           <Name>Actual</Name>
-          <Comment> BYTE actual value</Comment>
-          <Type>BYTE</Type>
-          <BitSize>8</BitSize>
+          <Comment> DWORD actual value</Comment>
+          <Type>DWORD</Type>
+          <BitSize>32</BitSize>
         </Parameter>
         <Parameter>
           <Name>Message</Name>
@@ -8910,6 +8910,661 @@
         </Local>
       </Method>
       <Method>
+        <Name>AssertFalse</Name>
+        <Parameter>
+          <Name>Condition</Name>
+          <Comment> Condition to be checked</Comment>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>AssertArray2dEquals_LREAL</Name>
+        <Parameter>
+          <Name>Expecteds</Name>
+          <Comment> LREAL 2d array with expected values</Comment>
+          <Type PointerTo="1" RpcArrayDim="2">LREAL</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>variable_length_array</Name>
+            </Property>
+            <Property>
+              <Name>Dimensions</Name>
+              <Value>2</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>Actuals</Name>
+          <Comment> LREAL 2d array with actual values</Comment>
+          <Type PointerTo="1" RpcArrayDim="2">LREAL</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>variable_length_array</Name>
+            </Property>
+            <Property>
+              <Name>Dimensions</Name>
+              <Value>2</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>Delta</Name>
+          <Comment> The maximum delta between the value of expected and actual for which both numbers are still considered equal, proportional to the expected value in that array cell</Comment>
+          <Type>LREAL</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>Equals</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeEquals</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>ExpectedString</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>ActualString</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>AlreadyReported</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>DimensionIndex</Name>
+          <Comment> Index when looping through Dimensions</Comment>
+          <Type>USINT</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>LowerBoundExpecteds</Name>
+          <Comment> Lower bounds of Expecteds array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>UpperBoundExpecteds</Name>
+          <Comment> Upper bounds of Expecteds array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>LowerBoundActuals</Name>
+          <Comment> Lower bounds of Actuals array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>UpperBoundActuals</Name>
+          <Comment> Upper bounds of Actuals array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeOfExpecteds</Name>
+          <Comment> Size of Expecteds array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeOfActuals</Name>
+          <Comment> Size of Actuals array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>Offset</Name>
+          <Comment> Current Array index offsets from Lower Bound in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>ExpectedArrayIndex</Name>
+          <Comment> Array of current Expected array indexes when looping through arrays</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>ActualArrayIndex</Name>
+          <Comment> Array of current Actual array indexes when looping through arrays</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>Expected</Name>
+          <Comment> Single expected value</Comment>
+          <Type>LREAL</Type>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>Actual</Name>
+          <Comment> Single actual value</Comment>
+          <Type>LREAL</Type>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AssertEquals_ULINT</Name>
+        <Parameter>
+          <Name>Expected</Name>
+          <Comment> ULINT expected value</Comment>
+          <Type>ULINT</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Actual</Name>
+          <Comment> ULINT actual value</Comment>
+          <Type>ULINT</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>AlreadyReported</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AssertEquals_BOOL</Name>
+        <Parameter>
+          <Name>Expected</Name>
+          <Comment> BOOL expected value</Comment>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Actual</Name>
+          <Comment> BOOL actual value</Comment>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>AlreadyReported</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AssertTrue</Name>
+        <Parameter>
+          <Name>Condition</Name>
+          <Comment> Condition to be checked</Comment>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>AssertEquals_USINT</Name>
+        <Parameter>
+          <Name>Expected</Name>
+          <Comment> USINT expected value</Comment>
+          <Type>USINT</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Actual</Name>
+          <Comment> USINT actual value</Comment>
+          <Type>USINT</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>AlreadyReported</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AssertArray2dEquals_REAL</Name>
+        <Parameter>
+          <Name>Expecteds</Name>
+          <Comment> REAL 2d array with expected values</Comment>
+          <Type PointerTo="1" RpcArrayDim="2">REAL</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>variable_length_array</Name>
+            </Property>
+            <Property>
+              <Name>Dimensions</Name>
+              <Value>2</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>Actuals</Name>
+          <Comment> REAL 2d array with actual values</Comment>
+          <Type PointerTo="1" RpcArrayDim="2">REAL</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>variable_length_array</Name>
+            </Property>
+            <Property>
+              <Name>Dimensions</Name>
+              <Value>2</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>Delta</Name>
+          <Comment> The maximum delta between the value of expected and actual for which both numbers are still considered equal, proportional to the expected value in that array cell</Comment>
+          <Type>REAL</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>Equals</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeEquals</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>ExpectedString</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>ActualString</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>AlreadyReported</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>DimensionIndex</Name>
+          <Comment> Index when looping through Dimensions</Comment>
+          <Type>USINT</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>LowerBoundExpecteds</Name>
+          <Comment> Lower bounds of Expecteds array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>UpperBoundExpecteds</Name>
+          <Comment> Upper bounds of Expecteds array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>LowerBoundActuals</Name>
+          <Comment> Lower bounds of Actuals array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>UpperBoundActuals</Name>
+          <Comment> Upper bounds of Actuals array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeOfExpecteds</Name>
+          <Comment> Size of Expecteds array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeOfActuals</Name>
+          <Comment> Size of Actuals array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>Offset</Name>
+          <Comment> Current Array index offsets from Lower Bound in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>ExpectedArrayIndex</Name>
+          <Comment> Array of current Expected array indexes when looping through arrays</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>ActualArrayIndex</Name>
+          <Comment> Array of current Actual array indexes when looping through arrays</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>Expected</Name>
+          <Comment> Single expected value</Comment>
+          <Type>REAL</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>Actual</Name>
+          <Comment> Single actual value</Comment>
+          <Type>REAL</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AssertEquals_BYTE</Name>
+        <Parameter>
+          <Name>Expected</Name>
+          <Comment> BYTE expected value</Comment>
+          <Type>BYTE</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Actual</Name>
+          <Comment> BYTE actual value</Comment>
+          <Type>BYTE</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>AlreadyReported</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AssertArrayEquals_USINT</Name>
+        <Parameter>
+          <Name>Expecteds</Name>
+          <Comment> USINT array with expected values</Comment>
+          <Type PointerTo="1" RpcArrayDim="1">USINT</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>variable_length_array</Name>
+            </Property>
+            <Property>
+              <Name>Dimensions</Name>
+              <Value>1</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>Actuals</Name>
+          <Comment> USINT array with actual values</Comment>
+          <Type PointerTo="1" RpcArrayDim="1">USINT</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>variable_length_array</Name>
+            </Property>
+            <Property>
+              <Name>Dimensions</Name>
+              <Value>1</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>Equals</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeEquals</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>Index</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>ExpectedString</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>ActualString</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>AlreadyReported</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeOfExpecteds</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeOfActuals</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>ExpectedsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>SetHasStartedRunning</Name>
+      </Method>
+      <Method>
+        <Name>SetTestFailed</Name>
+        <Parameter>
+          <Name>AssertionType</Name>
+          <Type Namespace="lcls_twincat_motion.LCLS_General.TcUnit">E_AssertionType</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>AssertionMessage</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>IteratorCounter</Name>
+          <Type>UINT</Type>
+          <BitSize>16</BitSize>
+        </Local>
+        <Local>
+          <Name>NumberOfTestsToAnalyse</Name>
+          <Type>UINT (0..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Type>
+          <BitSize>16</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>GetInstancePath</Name>
+        <ReturnType Namespace="Tc2_System">T_MaxString</ReturnType>
+        <ReturnBitSize>2048</ReturnBitSize>
+      </Method>
+      <Method>
         <Name>AssertEquals</Name>
         <Parameter>
           <Name>Expected</Name>
@@ -9214,509 +9869,6 @@
             <Name>hasanytype</Name>
           </Property>
         </Properties>
-      </Method>
-      <Method>
-        <Name>AssertFalse</Name>
-        <Parameter>
-          <Name>Condition</Name>
-          <Comment> Condition to be checked</Comment>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AssertEquals_SINT</Name>
-        <Parameter>
-          <Name>Expected</Name>
-          <Comment> SINT expected value</Comment>
-          <Type>SINT</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Actual</Name>
-          <Comment> SINT actual value</Comment>
-          <Type>SINT</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>AlreadyReported</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>AssertArray2dEquals_LREAL</Name>
-        <Parameter>
-          <Name>Expecteds</Name>
-          <Comment> LREAL 2d array with expected values</Comment>
-          <Type PointerTo="1" RpcArrayDim="2">LREAL</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>variable_length_array</Name>
-            </Property>
-            <Property>
-              <Name>Dimensions</Name>
-              <Value>2</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>Actuals</Name>
-          <Comment> LREAL 2d array with actual values</Comment>
-          <Type PointerTo="1" RpcArrayDim="2">LREAL</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>variable_length_array</Name>
-            </Property>
-            <Property>
-              <Name>Dimensions</Name>
-              <Value>2</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>Delta</Name>
-          <Comment> The maximum delta between the value of expected and actual for which both numbers are still considered equal, proportional to the expected value in that array cell</Comment>
-          <Type>LREAL</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>Equals</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeEquals</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>ExpectedString</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>ActualString</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>AlreadyReported</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>DimensionIndex</Name>
-          <Comment> Index when looping through Dimensions</Comment>
-          <Type>USINT</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>LowerBoundExpecteds</Name>
-          <Comment> Lower bounds of Expecteds array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>UpperBoundExpecteds</Name>
-          <Comment> Upper bounds of Expecteds array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>LowerBoundActuals</Name>
-          <Comment> Lower bounds of Actuals array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>UpperBoundActuals</Name>
-          <Comment> Upper bounds of Actuals array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeOfExpecteds</Name>
-          <Comment> Size of Expecteds array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeOfActuals</Name>
-          <Comment> Size of Actuals array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>Offset</Name>
-          <Comment> Current Array index offsets from Lower Bound in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>ExpectedArrayIndex</Name>
-          <Comment> Array of current Expected array indexes when looping through arrays</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>ActualArrayIndex</Name>
-          <Comment> Array of current Actual array indexes when looping through arrays</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>Expected</Name>
-          <Comment> Single expected value</Comment>
-          <Type>LREAL</Type>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>Actual</Name>
-          <Comment> Single actual value</Comment>
-          <Type>LREAL</Type>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>AssertEquals_ULINT</Name>
-        <Parameter>
-          <Name>Expected</Name>
-          <Comment> ULINT expected value</Comment>
-          <Type>ULINT</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Actual</Name>
-          <Comment> ULINT actual value</Comment>
-          <Type>ULINT</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>AlreadyReported</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>AssertEquals_BOOL</Name>
-        <Parameter>
-          <Name>Expected</Name>
-          <Comment> BOOL expected value</Comment>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Actual</Name>
-          <Comment> BOOL actual value</Comment>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>AlreadyReported</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>AssertEquals_USINT</Name>
-        <Parameter>
-          <Name>Expected</Name>
-          <Comment> USINT expected value</Comment>
-          <Type>USINT</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Actual</Name>
-          <Comment> USINT actual value</Comment>
-          <Type>USINT</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>AlreadyReported</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>AssertEquals_LWORD</Name>
-        <Parameter>
-          <Name>Expected</Name>
-          <Comment> LWORD expected value</Comment>
-          <Type>LWORD</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Actual</Name>
-          <Comment> LWORD actual value</Comment>
-          <Type>LWORD</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>AlreadyReported</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>AssertArrayEquals_USINT</Name>
-        <Parameter>
-          <Name>Expecteds</Name>
-          <Comment> USINT array with expected values</Comment>
-          <Type PointerTo="1" RpcArrayDim="1">USINT</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>variable_length_array</Name>
-            </Property>
-            <Property>
-              <Name>Dimensions</Name>
-              <Value>1</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>Actuals</Name>
-          <Comment> USINT array with actual values</Comment>
-          <Type PointerTo="1" RpcArrayDim="1">USINT</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>variable_length_array</Name>
-            </Property>
-            <Property>
-              <Name>Dimensions</Name>
-              <Value>1</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>Equals</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeEquals</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>Index</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>ExpectedString</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>ActualString</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>AlreadyReported</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeOfExpecteds</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeOfActuals</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>ExpectedsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>SetHasStartedRunning</Name>
-      </Method>
-      <Method>
-        <Name>SetTestFailed</Name>
-        <Parameter>
-          <Name>AssertionType</Name>
-          <Type Namespace="lcls_twincat_motion.LCLS_General.TcUnit">E_AssertionType</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>AssertionMessage</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>IteratorCounter</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Local>
-        <Local>
-          <Name>NumberOfTestsToAnalyse</Name>
-          <Type>UINT (0..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Type>
-          <BitSize>16</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>GetInstancePath</Name>
-        <ReturnType Namespace="Tc2_System">T_MaxString</ReturnType>
-        <ReturnBitSize>2048</ReturnBitSize>
-      </Method>
-      <Method>
-        <Name>GetTestOrderNumber</Name>
-        <ReturnType>UINT (0..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</ReturnType>
-        <ReturnBitSize>16</ReturnBitSize>
-        <Parameter>
-          <Name>TestName</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>IteratorCounter</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Local>
-        <Local>
-          <Name>NumberOfTestsToAnalyse</Name>
-          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
-          <BitSize>16</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>GetNumberOfTests</Name>
@@ -10240,6 +10392,21 @@
         </Local>
       </Method>
       <Method>
+        <Name>AddTestNameToInstancePath</Name>
+        <ReturnType Namespace="Tc2_System">T_MaxString</ReturnType>
+        <ReturnBitSize>2048</ReturnBitSize>
+        <Parameter>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>CompleteTestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+      </Method>
+      <Method>
         <Name>SetTestFinished</Name>
         <ReturnType>BOOL</ReturnType>
         <ReturnBitSize>8</ReturnBitSize>
@@ -10719,50 +10886,24 @@
         </Local>
       </Method>
       <Method>
-        <Name>AssertEquals_DWORD</Name>
+        <Name>GetTestOrderNumber</Name>
+        <ReturnType>UINT (0..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</ReturnType>
+        <ReturnBitSize>16</ReturnBitSize>
         <Parameter>
-          <Name>Expected</Name>
-          <Comment> DWORD expected value</Comment>
-          <Type>DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Actual</Name>
-          <Comment> DWORD actual value</Comment>
-          <Type>DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
+          <Name>TestName</Name>
           <Type Namespace="Tc2_System">T_MaxString</Type>
           <BitSize>2048</BitSize>
         </Parameter>
         <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
+          <Name>IteratorCounter</Name>
+          <Type>UINT</Type>
+          <BitSize>16</BitSize>
         </Local>
         <Local>
-          <Name>AlreadyReported</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
+          <Name>NumberOfTestsToAnalyse</Name>
+          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+          <BitSize>16</BitSize>
         </Local>
-      </Method>
-      <Method>
-        <Name>AssertTrue</Name>
-        <Parameter>
-          <Name>Condition</Name>
-          <Comment> Condition to be checked</Comment>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
       </Method>
       <Method>
         <Name>AssertEquals_INT</Name>
@@ -10827,42 +10968,18 @@
         </Local>
       </Method>
       <Method>
-        <Name>AssertArray2dEquals_REAL</Name>
+        <Name>AssertEquals_SINT</Name>
         <Parameter>
-          <Name>Expecteds</Name>
-          <Comment> REAL 2d array with expected values</Comment>
-          <Type PointerTo="1" RpcArrayDim="2">REAL</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>variable_length_array</Name>
-            </Property>
-            <Property>
-              <Name>Dimensions</Name>
-              <Value>2</Value>
-            </Property>
-          </Properties>
+          <Name>Expected</Name>
+          <Comment> SINT expected value</Comment>
+          <Type>SINT</Type>
+          <BitSize>8</BitSize>
         </Parameter>
         <Parameter>
-          <Name>Actuals</Name>
-          <Comment> REAL 2d array with actual values</Comment>
-          <Type PointerTo="1" RpcArrayDim="2">REAL</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>variable_length_array</Name>
-            </Property>
-            <Property>
-              <Name>Dimensions</Name>
-              <Value>2</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>Delta</Name>
-          <Comment> The maximum delta between the value of expected and actual for which both numbers are still considered equal, proportional to the expected value in that array cell</Comment>
-          <Type>REAL</Type>
-          <BitSize>32</BitSize>
+          <Name>Actual</Name>
+          <Comment> SINT actual value</Comment>
+          <Type>SINT</Type>
+          <BitSize>8</BitSize>
         </Parameter>
         <Parameter>
           <Name>Message</Name>
@@ -10871,22 +10988,7 @@
           <BitSize>2048</BitSize>
         </Parameter>
         <Local>
-          <Name>Equals</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeEquals</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>ExpectedString</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>ActualString</Name>
+          <Name>TestInstancePath</Name>
           <Type Namespace="Tc2_System">T_MaxString</Type>
           <BitSize>2048</BitSize>
         </Local>
@@ -10894,124 +10996,6 @@
           <Name>AlreadyReported</Name>
           <Type>BOOL</Type>
           <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>DimensionIndex</Name>
-          <Comment> Index when looping through Dimensions</Comment>
-          <Type>USINT</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>LowerBoundExpecteds</Name>
-          <Comment> Lower bounds of Expecteds array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>UpperBoundExpecteds</Name>
-          <Comment> Upper bounds of Expecteds array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>LowerBoundActuals</Name>
-          <Comment> Lower bounds of Actuals array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>UpperBoundActuals</Name>
-          <Comment> Upper bounds of Actuals array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeOfExpecteds</Name>
-          <Comment> Size of Expecteds array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeOfActuals</Name>
-          <Comment> Size of Actuals array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>Offset</Name>
-          <Comment> Current Array index offsets from Lower Bound in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>ExpectedArrayIndex</Name>
-          <Comment> Array of current Expected array indexes when looping through arrays</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>ActualArrayIndex</Name>
-          <Comment> Array of current Actual array indexes when looping through arrays</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>Expected</Name>
-          <Comment> Single expected value</Comment>
-          <Type>REAL</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>Actual</Name>
-          <Comment> Single actual value</Comment>
-          <Type>REAL</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
         </Local>
       </Method>
       <Method>
@@ -11282,18 +11266,34 @@
         </Local>
       </Method>
       <Method>
-        <Name>AddTestNameToInstancePath</Name>
-        <ReturnType Namespace="Tc2_System">T_MaxString</ReturnType>
-        <ReturnBitSize>2048</ReturnBitSize>
+        <Name>AssertEquals_LWORD</Name>
         <Parameter>
-          <Name>TestInstancePath</Name>
+          <Name>Expected</Name>
+          <Comment> LWORD expected value</Comment>
+          <Type>LWORD</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Actual</Name>
+          <Comment> LWORD actual value</Comment>
+          <Type>LWORD</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
           <Type Namespace="Tc2_System">T_MaxString</Type>
           <BitSize>2048</BitSize>
         </Parameter>
         <Local>
-          <Name>CompleteTestInstancePath</Name>
+          <Name>TestInstancePath</Name>
           <Type Namespace="Tc2_System">T_MaxString</Type>
           <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>AlreadyReported</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
         </Local>
       </Method>
       <Method>
@@ -11971,6 +11971,32 @@
         <ReturnBitSize>32</ReturnBitSize>
       </Method>
       <Method>
+        <Name>GetAndRemoveLogFromQueue</Name>
+        <Parameter>
+          <Name>AdsLogStringMessage</Name>
+          <Type Namespace="lcls_twincat_motion.LCLS_General.TcUnit">ST_AdsLogStringMessage</Type>
+          <BitSize>4128</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>Output</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>Error</Name>
+          <Comment> Buffer empty</Comment>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>Output</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+      </Method>
+      <Method>
         <Name>WriteLog</Name>
         <Parameter>
           <Name>MsgCtrlMask</Name>
@@ -12004,32 +12030,6 @@
           <Type Namespace="lcls_twincat_motion.LCLS_General.TcUnit">ST_AdsLogStringMessage</Type>
           <BitSize>4128</BitSize>
         </Local>
-      </Method>
-      <Method>
-        <Name>GetAndRemoveLogFromQueue</Name>
-        <Parameter>
-          <Name>AdsLogStringMessage</Name>
-          <Type Namespace="lcls_twincat_motion.LCLS_General.TcUnit">ST_AdsLogStringMessage</Type>
-          <BitSize>4128</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>Error</Name>
-          <Comment> Buffer empty</Comment>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
-        </Parameter>
       </Method>
       <Properties>
         <Property>
@@ -12141,6 +12141,14 @@
         </Default>
       </SubItem>
       <Method>
+        <Name>AddUlint</Name>
+        <Parameter>
+          <Name>value</Name>
+          <Type>ULINT</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
         <Name>AddKeyNumber</Name>
         <Parameter>
           <Name>key</Name>
@@ -12193,6 +12201,20 @@
         </Parameter>
       </Method>
       <Method>
+        <Name>AddKeyNull</Name>
+        <Parameter>
+          <Name>key</Name>
+          <Type ReferenceTo="true">STRING(80)</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>InOut</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+      </Method>
+      <Method>
         <Name>IsComplete</Name>
         <ReturnType>BOOL</ReturnType>
         <ReturnBitSize>8</ReturnBitSize>
@@ -12206,25 +12228,17 @@
         </Parameter>
       </Method>
       <Method>
-        <Name>AddHexBinary</Name>
-        <Parameter>
-          <Name>pBytes</Name>
-          <Type PointerTo="1">BYTE</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nBytes</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
         <Name>AddLint</Name>
         <Parameter>
           <Name>value</Name>
           <Type>LINT</Type>
           <BitSize>64</BitSize>
         </Parameter>
+      </Method>
+      <Method>
+        <Name>StartObject</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
       </Method>
       <Method>
         <Name>AddLreal</Name>
@@ -12249,11 +12263,6 @@
         </Parameter>
       </Method>
       <Method>
-        <Name>ResetDocument</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-      </Method>
-      <Method>
         <Name>AddKeyLreal</Name>
         <Parameter>
           <Name>key</Name>
@@ -12273,35 +12282,36 @@
         </Parameter>
       </Method>
       <Method>
-        <Name>StartObject</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
+        <Name>AddFileTime</Name>
+        <Parameter>
+          <Name>value</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000046}">FILETIME</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
       </Method>
       <Method>
-        <Name>GetDocumentLength</Name>
-        <ReturnType>UDINT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
+        <Name>AddNull</Name>
+      </Method>
+      <Method>
+        <Name>AddReal</Name>
         <Parameter>
-          <Name>hrErrorCode</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <Name>value</Name>
+          <Type>REAL</Type>
           <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
         </Parameter>
-        <Local>
-          <Name>n</Name>
-          <Type>UDINT</Type>
+      </Method>
+      <Method>
+        <Name>AddHexBinary</Name>
+        <Parameter>
+          <Name>pBytes</Name>
+          <Type PointerTo="1">BYTE</Type>
           <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>p</Name>
-          <Type PointerTo="1">STRING(80)</Type>
+        </Parameter>
+        <Parameter>
+          <Name>nBytes</Name>
+          <Type>DINT</Type>
           <BitSize>32</BitSize>
-        </Local>
+        </Parameter>
       </Method>
       <Method>
         <Name>AddKeyDcTime</Name>
@@ -12328,20 +12338,6 @@
           <Name>value</Name>
           <Type>DATE_AND_TIME</Type>
           <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddRawObject</Name>
-        <Parameter>
-          <Name>rawJson</Name>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
         </Parameter>
       </Method>
       <Method>
@@ -12387,32 +12383,6 @@
           <Type>BOOL</Type>
           <BitSize>8</BitSize>
         </Parameter>
-      </Method>
-      <Method>
-        <Name>GetDocument</Name>
-        <ReturnType>STRING(255)</ReturnType>
-        <ReturnBitSize>2048</ReturnBitSize>
-        <Parameter>
-          <Name>hrErrorCode</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Local>
-          <Name>p</Name>
-          <Type PointerTo="1">SINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>n</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AddDint</Name>
@@ -12464,6 +12434,150 @@
         </Parameter>
       </Method>
       <Method>
+        <Name>ResetDocument</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
+      </Method>
+      <Method>
+        <Name>GetMaxDecimalPlaces</Name>
+        <ReturnType>DINT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
+        <Local>
+          <Name>dp</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AddRawObject</Name>
+        <Parameter>
+          <Name>rawJson</Name>
+          <Type ReferenceTo="true">STRING(80)</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>InOut</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>GetDocumentLength</Name>
+        <ReturnType>UDINT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
+        <Parameter>
+          <Name>hrErrorCode</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>Output</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Local>
+          <Name>n</Name>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>p</Name>
+          <Type PointerTo="1">STRING(80)</Type>
+          <BitSize>32</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AddBool</Name>
+        <Parameter>
+          <Name>value</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>GetDocument</Name>
+        <ReturnType>STRING(255)</ReturnType>
+        <ReturnBitSize>2048</ReturnBitSize>
+        <Parameter>
+          <Name>hrErrorCode</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>Output</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Local>
+          <Name>p</Name>
+          <Type PointerTo="1">SINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>n</Name>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AddBase64</Name>
+        <Parameter>
+          <Name>pBytes</Name>
+          <Type PointerTo="1">BYTE</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>nBytes</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>AddDcTime</Name>
+        <Parameter>
+          <Name>value</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000047}">DCTIME</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>AddKeyDateTime</Name>
+        <Parameter>
+          <Name>key</Name>
+          <Type ReferenceTo="true">STRING(80)</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>InOut</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>value</Name>
+          <Type>DATE_AND_TIME</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>EndArray</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
+      </Method>
+      <Method>
+        <Name>EndObject</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
+      </Method>
+      <Method>
+        <Name>StartArray</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
+      </Method>
+      <Method>
         <Name>CopyDocument</Name>
         <ReturnType>UDINT</ReturnType>
         <ReturnBitSize>32</ReturnBitSize>
@@ -12495,120 +12609,6 @@
               <Value>Output</Value>
             </Property>
           </Properties>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddUlint</Name>
-        <Parameter>
-          <Name>value</Name>
-          <Type>ULINT</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>GetMaxDecimalPlaces</Name>
-        <ReturnType>DINT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Local>
-          <Name>dp</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>AddFileTime</Name>
-        <Parameter>
-          <Name>value</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000046}">FILETIME</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddNull</Name>
-      </Method>
-      <Method>
-        <Name>AddKeyDateTime</Name>
-        <Parameter>
-          <Name>key</Name>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>value</Name>
-          <Type>DATE_AND_TIME</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddBool</Name>
-        <Parameter>
-          <Name>value</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddBase64</Name>
-        <Parameter>
-          <Name>pBytes</Name>
-          <Type PointerTo="1">BYTE</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nBytes</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddDcTime</Name>
-        <Parameter>
-          <Name>value</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000047}">DCTIME</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddKeyNull</Name>
-        <Parameter>
-          <Name>key</Name>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>EndArray</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-      </Method>
-      <Method>
-        <Name>EndObject</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-      </Method>
-      <Method>
-        <Name>StartArray</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-      </Method>
-      <Method>
-        <Name>AddReal</Name>
-        <Parameter>
-          <Name>value</Name>
-          <Type>REAL</Type>
-          <BitSize>32</BitSize>
         </Parameter>
       </Method>
       <Properties>
@@ -27503,7 +27503,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634650560</BitOffs>
+            <BitOffs>634650816</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bLimitForwardEnable</Name>
@@ -27526,7 +27526,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634658560</BitOffs>
+            <BitOffs>634658816</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bLimitBackwardEnable</Name>
@@ -27549,7 +27549,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634658568</BitOffs>
+            <BitOffs>634658824</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bHome</Name>
@@ -27572,7 +27572,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634658576</BitOffs>
+            <BitOffs>634658832</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bHardwareEnable</Name>
@@ -27595,7 +27595,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634658592</BitOffs>
+            <BitOffs>634658848</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.nRawEncoderULINT</Name>
@@ -27608,7 +27608,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634658624</BitOffs>
+            <BitOffs>634658880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.nRawEncoderUINT</Name>
@@ -27621,7 +27621,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634658688</BitOffs>
+            <BitOffs>634658944</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.nRawEncoderINT</Name>
@@ -27634,7 +27634,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634658704</BitOffs>
+            <BitOffs>634658960</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.Axis.NcToPlc</Name>
@@ -27646,7 +27646,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634671808</BitOffs>
+            <BitOffs>634672064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bLimitForwardEnable</Name>
@@ -27669,7 +27669,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634679808</BitOffs>
+            <BitOffs>634680064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bLimitBackwardEnable</Name>
@@ -27692,7 +27692,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634679816</BitOffs>
+            <BitOffs>634680072</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bHome</Name>
@@ -27715,7 +27715,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634679824</BitOffs>
+            <BitOffs>634680080</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bHardwareEnable</Name>
@@ -27738,7 +27738,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634679840</BitOffs>
+            <BitOffs>634680096</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.nRawEncoderULINT</Name>
@@ -27751,7 +27751,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634679872</BitOffs>
+            <BitOffs>634680128</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.nRawEncoderUINT</Name>
@@ -27764,7 +27764,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634679936</BitOffs>
+            <BitOffs>634680192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.nRawEncoderINT</Name>
@@ -27777,7 +27777,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634679952</BitOffs>
+            <BitOffs>634680208</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.Axis.NcToPlc</Name>
@@ -27789,7 +27789,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634693056</BitOffs>
+            <BitOffs>634693312</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bLimitForwardEnable</Name>
@@ -27812,7 +27812,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634701056</BitOffs>
+            <BitOffs>634701312</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bLimitBackwardEnable</Name>
@@ -27835,7 +27835,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634701064</BitOffs>
+            <BitOffs>634701320</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bHome</Name>
@@ -27858,7 +27858,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634701072</BitOffs>
+            <BitOffs>634701328</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bHardwareEnable</Name>
@@ -27881,7 +27881,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634701088</BitOffs>
+            <BitOffs>634701344</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.nRawEncoderULINT</Name>
@@ -27894,7 +27894,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634701120</BitOffs>
+            <BitOffs>634701376</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.nRawEncoderUINT</Name>
@@ -27907,7 +27907,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634701184</BitOffs>
+            <BitOffs>634701440</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.nRawEncoderINT</Name>
@@ -27920,7 +27920,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634701200</BitOffs>
+            <BitOffs>634701456</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.Axis.NcToPlc</Name>
@@ -27932,7 +27932,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634714304</BitOffs>
+            <BitOffs>634714560</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.bLimitForwardEnable</Name>
@@ -27955,7 +27955,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634722304</BitOffs>
+            <BitOffs>634722560</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.bLimitBackwardEnable</Name>
@@ -27978,7 +27978,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634722312</BitOffs>
+            <BitOffs>634722568</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.bHome</Name>
@@ -28001,7 +28001,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634722320</BitOffs>
+            <BitOffs>634722576</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.bHardwareEnable</Name>
@@ -28024,7 +28024,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634722336</BitOffs>
+            <BitOffs>634722592</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.nRawEncoderULINT</Name>
@@ -28037,7 +28037,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634722368</BitOffs>
+            <BitOffs>634722624</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.nRawEncoderUINT</Name>
@@ -28050,7 +28050,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634722432</BitOffs>
+            <BitOffs>634722688</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.nRawEncoderINT</Name>
@@ -28063,7 +28063,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634722448</BitOffs>
+            <BitOffs>634722704</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.Axis.NcToPlc</Name>
@@ -28075,7 +28075,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634735552</BitOffs>
+            <BitOffs>634735808</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.bLimitForwardEnable</Name>
@@ -28098,7 +28098,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634743552</BitOffs>
+            <BitOffs>634743808</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.bLimitBackwardEnable</Name>
@@ -28121,7 +28121,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634743560</BitOffs>
+            <BitOffs>634743816</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.bHome</Name>
@@ -28144,7 +28144,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634743568</BitOffs>
+            <BitOffs>634743824</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.bHardwareEnable</Name>
@@ -28167,7 +28167,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634743584</BitOffs>
+            <BitOffs>634743840</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.nRawEncoderULINT</Name>
@@ -28180,7 +28180,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634743616</BitOffs>
+            <BitOffs>634743872</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.nRawEncoderUINT</Name>
@@ -28193,7 +28193,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634743680</BitOffs>
+            <BitOffs>634743936</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.nRawEncoderINT</Name>
@@ -28206,7 +28206,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634743696</BitOffs>
+            <BitOffs>634743952</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.Axis.NcToPlc</Name>
@@ -28218,7 +28218,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634756800</BitOffs>
+            <BitOffs>634757056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.bLimitForwardEnable</Name>
@@ -28241,7 +28241,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634764800</BitOffs>
+            <BitOffs>634765056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.bLimitBackwardEnable</Name>
@@ -28264,7 +28264,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634764808</BitOffs>
+            <BitOffs>634765064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.bHome</Name>
@@ -28287,7 +28287,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634764816</BitOffs>
+            <BitOffs>634765072</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.bHardwareEnable</Name>
@@ -28310,7 +28310,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634764832</BitOffs>
+            <BitOffs>634765088</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.nRawEncoderULINT</Name>
@@ -28323,7 +28323,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634764864</BitOffs>
+            <BitOffs>634765120</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.nRawEncoderUINT</Name>
@@ -28336,7 +28336,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634764928</BitOffs>
+            <BitOffs>634765184</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.nRawEncoderINT</Name>
@@ -28349,7 +28349,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634764944</BitOffs>
+            <BitOffs>634765200</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.Axis.NcToPlc</Name>
@@ -28361,7 +28361,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634778048</BitOffs>
+            <BitOffs>634778304</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.bLimitForwardEnable</Name>
@@ -28384,7 +28384,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634786048</BitOffs>
+            <BitOffs>634786304</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.bLimitBackwardEnable</Name>
@@ -28407,7 +28407,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634786056</BitOffs>
+            <BitOffs>634786312</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.bHome</Name>
@@ -28430,7 +28430,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634786064</BitOffs>
+            <BitOffs>634786320</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.bHardwareEnable</Name>
@@ -28453,7 +28453,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634786080</BitOffs>
+            <BitOffs>634786336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.nRawEncoderULINT</Name>
@@ -28466,7 +28466,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634786112</BitOffs>
+            <BitOffs>634786368</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.nRawEncoderUINT</Name>
@@ -28479,7 +28479,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634786176</BitOffs>
+            <BitOffs>634786432</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.nRawEncoderINT</Name>
@@ -28492,7 +28492,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634786192</BitOffs>
+            <BitOffs>634786448</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.Axis.NcToPlc</Name>
@@ -28504,7 +28504,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634799296</BitOffs>
+            <BitOffs>634799552</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.bLimitForwardEnable</Name>
@@ -28527,7 +28527,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634807296</BitOffs>
+            <BitOffs>634807552</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.bLimitBackwardEnable</Name>
@@ -28550,7 +28550,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634807304</BitOffs>
+            <BitOffs>634807560</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.bHome</Name>
@@ -28573,7 +28573,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634807312</BitOffs>
+            <BitOffs>634807568</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.bHardwareEnable</Name>
@@ -28596,7 +28596,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634807328</BitOffs>
+            <BitOffs>634807584</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.nRawEncoderULINT</Name>
@@ -28609,7 +28609,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634807360</BitOffs>
+            <BitOffs>634807616</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.nRawEncoderUINT</Name>
@@ -28622,7 +28622,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634807424</BitOffs>
+            <BitOffs>634807680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.nRawEncoderINT</Name>
@@ -28635,7 +28635,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634807440</BitOffs>
+            <BitOffs>634807696</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.Axis.NcToPlc</Name>
@@ -28647,7 +28647,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634820544</BitOffs>
+            <BitOffs>634820800</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.bLimitForwardEnable</Name>
@@ -28670,7 +28670,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634828544</BitOffs>
+            <BitOffs>634828800</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.bLimitBackwardEnable</Name>
@@ -28693,7 +28693,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634828552</BitOffs>
+            <BitOffs>634828808</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.bHome</Name>
@@ -28716,7 +28716,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634828560</BitOffs>
+            <BitOffs>634828816</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.bHardwareEnable</Name>
@@ -28739,7 +28739,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634828576</BitOffs>
+            <BitOffs>634828832</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.nRawEncoderULINT</Name>
@@ -28752,7 +28752,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634828608</BitOffs>
+            <BitOffs>634828864</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.nRawEncoderUINT</Name>
@@ -28765,7 +28765,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634828672</BitOffs>
+            <BitOffs>634828928</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.nRawEncoderINT</Name>
@@ -28778,7 +28778,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634828688</BitOffs>
+            <BitOffs>634828944</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.Axis.NcToPlc</Name>
@@ -28790,7 +28790,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634841792</BitOffs>
+            <BitOffs>634842048</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.bLimitForwardEnable</Name>
@@ -28813,7 +28813,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634849792</BitOffs>
+            <BitOffs>634850048</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.bLimitBackwardEnable</Name>
@@ -28836,7 +28836,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634849800</BitOffs>
+            <BitOffs>634850056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.bHome</Name>
@@ -28859,7 +28859,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634849808</BitOffs>
+            <BitOffs>634850064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.bHardwareEnable</Name>
@@ -28882,7 +28882,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634849824</BitOffs>
+            <BitOffs>634850080</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.nRawEncoderULINT</Name>
@@ -28895,7 +28895,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634849856</BitOffs>
+            <BitOffs>634850112</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.nRawEncoderUINT</Name>
@@ -28908,7 +28908,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634849920</BitOffs>
+            <BitOffs>634850176</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.nRawEncoderINT</Name>
@@ -28921,7 +28921,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634849936</BitOffs>
+            <BitOffs>634850192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.Axis.NcToPlc</Name>
@@ -28933,7 +28933,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634863040</BitOffs>
+            <BitOffs>634863296</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.bLimitForwardEnable</Name>
@@ -28956,7 +28956,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634871040</BitOffs>
+            <BitOffs>634871296</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.bLimitBackwardEnable</Name>
@@ -28979,7 +28979,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634871048</BitOffs>
+            <BitOffs>634871304</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.bHome</Name>
@@ -29002,7 +29002,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634871056</BitOffs>
+            <BitOffs>634871312</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.bHardwareEnable</Name>
@@ -29025,7 +29025,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634871072</BitOffs>
+            <BitOffs>634871328</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.nRawEncoderULINT</Name>
@@ -29038,7 +29038,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634871104</BitOffs>
+            <BitOffs>634871360</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.nRawEncoderUINT</Name>
@@ -29051,7 +29051,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634871168</BitOffs>
+            <BitOffs>634871424</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.nRawEncoderINT</Name>
@@ -29064,7 +29064,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634871184</BitOffs>
+            <BitOffs>634871440</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.Axis.NcToPlc</Name>
@@ -29076,7 +29076,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634884288</BitOffs>
+            <BitOffs>634884544</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.bLimitForwardEnable</Name>
@@ -29099,7 +29099,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634892288</BitOffs>
+            <BitOffs>634892544</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.bLimitBackwardEnable</Name>
@@ -29122,7 +29122,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634892296</BitOffs>
+            <BitOffs>634892552</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.bHome</Name>
@@ -29145,7 +29145,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634892304</BitOffs>
+            <BitOffs>634892560</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.bHardwareEnable</Name>
@@ -29168,7 +29168,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634892320</BitOffs>
+            <BitOffs>634892576</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.nRawEncoderULINT</Name>
@@ -29181,7 +29181,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634892352</BitOffs>
+            <BitOffs>634892608</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.nRawEncoderUINT</Name>
@@ -29194,7 +29194,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634892416</BitOffs>
+            <BitOffs>634892672</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.nRawEncoderINT</Name>
@@ -29207,7 +29207,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634892432</BitOffs>
+            <BitOffs>634892688</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM1.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -29219,7 +29219,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>634906944</BitOffs>
+            <BitOffs>634907200</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM2.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -29231,7 +29231,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>635206336</BitOffs>
+            <BitOffs>635206592</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM3.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -29243,7 +29243,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>635505728</BitOffs>
+            <BitOffs>635505984</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM4.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -29255,7 +29255,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>635805120</BitOffs>
+            <BitOffs>635805376</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM5.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -29267,7 +29267,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>636104512</BitOffs>
+            <BitOffs>636104768</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM6.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -29279,7 +29279,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>636403904</BitOffs>
+            <BitOffs>636404160</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM7.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -29291,7 +29291,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>636703296</BitOffs>
+            <BitOffs>636703552</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM8.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -29303,7 +29303,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>637002688</BitOffs>
+            <BitOffs>637002944</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM9.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -29315,7 +29315,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>637302080</BitOffs>
+            <BitOffs>637302336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM14.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -29327,7 +29327,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>637601472</BitOffs>
+            <BitOffs>637601728</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM15.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -29339,7 +29339,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>637900864</BitOffs>
+            <BitOffs>637901120</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM16.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -29351,7 +29351,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>638200256</BitOffs>
+            <BitOffs>638200512</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
@@ -29369,7 +29369,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634649536</BitOffs>
+            <BitOffs>634649792</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bBrakeRelease</Name>
@@ -29392,7 +29392,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634658584</BitOffs>
+            <BitOffs>634658840</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.Axis.PlcToNc</Name>
@@ -29404,7 +29404,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634670784</BitOffs>
+            <BitOffs>634671040</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bBrakeRelease</Name>
@@ -29427,7 +29427,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634679832</BitOffs>
+            <BitOffs>634680088</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.Axis.PlcToNc</Name>
@@ -29439,7 +29439,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634692032</BitOffs>
+            <BitOffs>634692288</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bBrakeRelease</Name>
@@ -29462,7 +29462,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634701080</BitOffs>
+            <BitOffs>634701336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.Axis.PlcToNc</Name>
@@ -29474,7 +29474,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634713280</BitOffs>
+            <BitOffs>634713536</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.bBrakeRelease</Name>
@@ -29497,7 +29497,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634722328</BitOffs>
+            <BitOffs>634722584</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.Axis.PlcToNc</Name>
@@ -29509,7 +29509,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634734528</BitOffs>
+            <BitOffs>634734784</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.bBrakeRelease</Name>
@@ -29532,7 +29532,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634743576</BitOffs>
+            <BitOffs>634743832</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.Axis.PlcToNc</Name>
@@ -29544,7 +29544,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634755776</BitOffs>
+            <BitOffs>634756032</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.bBrakeRelease</Name>
@@ -29567,7 +29567,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634764824</BitOffs>
+            <BitOffs>634765080</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.Axis.PlcToNc</Name>
@@ -29579,7 +29579,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634777024</BitOffs>
+            <BitOffs>634777280</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.bBrakeRelease</Name>
@@ -29602,7 +29602,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634786072</BitOffs>
+            <BitOffs>634786328</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.Axis.PlcToNc</Name>
@@ -29614,7 +29614,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634798272</BitOffs>
+            <BitOffs>634798528</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.bBrakeRelease</Name>
@@ -29637,7 +29637,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634807320</BitOffs>
+            <BitOffs>634807576</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.Axis.PlcToNc</Name>
@@ -29649,7 +29649,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634819520</BitOffs>
+            <BitOffs>634819776</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.bBrakeRelease</Name>
@@ -29672,7 +29672,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634828568</BitOffs>
+            <BitOffs>634828824</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.Axis.PlcToNc</Name>
@@ -29684,7 +29684,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634840768</BitOffs>
+            <BitOffs>634841024</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.bBrakeRelease</Name>
@@ -29707,7 +29707,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634849816</BitOffs>
+            <BitOffs>634850072</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.Axis.PlcToNc</Name>
@@ -29719,7 +29719,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634862016</BitOffs>
+            <BitOffs>634862272</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.bBrakeRelease</Name>
@@ -29742,7 +29742,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634871064</BitOffs>
+            <BitOffs>634871320</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.Axis.PlcToNc</Name>
@@ -29754,7 +29754,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634883264</BitOffs>
+            <BitOffs>634883520</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.bBrakeRelease</Name>
@@ -29777,7 +29777,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634892312</BitOffs>
+            <BitOffs>634892568</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM1.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -29789,7 +29789,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>634905920</BitOffs>
+            <BitOffs>634906176</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM2.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -29801,7 +29801,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>635205312</BitOffs>
+            <BitOffs>635205568</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM3.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -29813,7 +29813,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>635504704</BitOffs>
+            <BitOffs>635504960</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM4.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -29825,7 +29825,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>635804096</BitOffs>
+            <BitOffs>635804352</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM5.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -29837,7 +29837,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>636103488</BitOffs>
+            <BitOffs>636103744</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM6.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -29849,7 +29849,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>636402880</BitOffs>
+            <BitOffs>636403136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM7.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -29861,7 +29861,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>636702272</BitOffs>
+            <BitOffs>636702528</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM8.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -29873,7 +29873,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>637001664</BitOffs>
+            <BitOffs>637001920</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM9.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -29885,7 +29885,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>637301056</BitOffs>
+            <BitOffs>637301312</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM14.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -29897,7 +29897,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>637600448</BitOffs>
+            <BitOffs>637600704</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM15.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -29909,7 +29909,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>637899840</BitOffs>
+            <BitOffs>637900096</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM16.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -29921,7 +29921,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>638199232</BitOffs>
+            <BitOffs>638199488</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
@@ -35636,6 +35636,46 @@ External Setpoint Generation:
             <BitOffs>634607552</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>Global_Version.stLibVersion_PMPS</Name>
+            <BitSize>288</BitSize>
+            <BaseType GUID="{6F5942ED-BFA1-497D-8225-23C6DAAD0A09}">ST_LibVersion</BaseType>
+            <Default>
+              <SubItem>
+                <Name>.iMajor</Name>
+                <Value>3</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.iMinor</Name>
+                <Value>3</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.iBuild</Name>
+                <Value>0</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.iRevision</Name>
+                <Value>0</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.nFlags</Name>
+                <Value>1</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.sVersion</Name>
+                <String>3.3.0</String>
+              </SubItem>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>const_non_replaced</Name>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>634607808</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>Global_Version.stLibVersion_Tc2_MC2</Name>
             <BitSize>288</BitSize>
             <BaseType GUID="{6F5942ED-BFA1-497D-8225-23C6DAAD0A09}">ST_LibVersion</BaseType>
@@ -35673,7 +35713,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>634607808</BitOffs>
+            <BitOffs>634608096</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.TcMcGlobal</Name>
@@ -35684,7 +35724,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>634608096</BitOffs>
+            <BitOffs>634608384</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.DEFAULT_HOME_POSITION</Name>
@@ -35698,7 +35738,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>634615104</BitOffs>
+            <BitOffs>634615360</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.DEFAULT_BACKLASHVALUE</Name>
@@ -35712,7 +35752,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>634615168</BitOffs>
+            <BitOffs>634615424</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Version.stLibVersion_Tc2_Math</Name>
@@ -35748,55 +35788,12 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>634615232</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Constants.bLittleEndian</Name>
-            <Comment> Does the target support an FPU</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Default>
-              <Value>1</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>634649448</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Constants.bSimulationMode</Name>
-            <Comment> Does the target support an FPU</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Default>
-              <Value>0</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>634649456</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Constants.bFPUSupport</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Default>
-              <Value>1</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>634649464</BitOffs>
+            <BitOffs>634615488</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1</Name>
-            <Comment> Motors</Comment>
+            <Comment> Motors
+                             .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 1^Position'}</Comment>
             <BitSize>21248</BitSize>
             <BaseType Namespace="lcls_twincat_motion">DUT_MotionStage</BaseType>
             <Default>
@@ -35826,7 +35823,7 @@ External Setpoint Generation:
     </Value>
               </Property>
             </Properties>
-            <BitOffs>634649472</BitOffs>
+            <BitOffs>634649728</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2</Name>
@@ -35851,7 +35848,8 @@ External Setpoint Generation:
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.bLimitForwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 2;
-                              .bLimitBackwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 1</Value>
+                              .bLimitBackwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 1;
+                              .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 2^Position</Value>
               </Property>
               <Property>
                 <Name>pytmc</Name>
@@ -35860,7 +35858,7 @@ External Setpoint Generation:
     </Value>
               </Property>
             </Properties>
-            <BitOffs>634670720</BitOffs>
+            <BitOffs>634670976</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3</Name>
@@ -35885,7 +35883,8 @@ External Setpoint Generation:
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.bLimitForwardEnable:=TIIB[GasJetZ-EL7041]^STM Status^Status^Digital input 2;
-                              .bLimitBackwardEnable:=TIIB[GasJetZ-EL7041]^STM Status^Status^Digital input 1</Value>
+                              .bLimitBackwardEnable:=TIIB[GasJetZ-EL7041]^STM Status^Status^Digital input 1;
+                              .nRawEncoderULINT     := TIIB[GasJetZGasNeedleX-EL5042]^FB Inputs Channel 1^Position</Value>
               </Property>
               <Property>
                 <Name>pytmc</Name>
@@ -35894,7 +35893,7 @@ External Setpoint Generation:
     </Value>
               </Property>
             </Properties>
-            <BitOffs>634691968</BitOffs>
+            <BitOffs>634692224</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4</Name>
@@ -35928,7 +35927,7 @@ External Setpoint Generation:
     </Value>
               </Property>
             </Properties>
-            <BitOffs>634713216</BitOffs>
+            <BitOffs>634713472</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5</Name>
@@ -35962,7 +35961,7 @@ External Setpoint Generation:
     </Value>
               </Property>
             </Properties>
-            <BitOffs>634734464</BitOffs>
+            <BitOffs>634734720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6</Name>
@@ -35996,7 +35995,7 @@ External Setpoint Generation:
     </Value>
               </Property>
             </Properties>
-            <BitOffs>634755712</BitOffs>
+            <BitOffs>634755968</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7</Name>
@@ -36022,7 +36021,7 @@ External Setpoint Generation:
     </Value>
               </Property>
             </Properties>
-            <BitOffs>634776960</BitOffs>
+            <BitOffs>634777216</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8</Name>
@@ -36048,7 +36047,7 @@ External Setpoint Generation:
     </Value>
               </Property>
             </Properties>
-            <BitOffs>634798208</BitOffs>
+            <BitOffs>634798464</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9</Name>
@@ -36074,7 +36073,7 @@ External Setpoint Generation:
     </Value>
               </Property>
             </Properties>
-            <BitOffs>634819456</BitOffs>
+            <BitOffs>634819712</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14</Name>
@@ -36095,7 +36094,7 @@ External Setpoint Generation:
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>	.bLimitForwardEnable:=TIIB[TIXELX-EL7041]^STM Status^Status^Digital input 1;
-                              	.bLimitBackwardEnable:=TIIB[TIXELX-EL7041]^STM Status^Status^Digital input 2</Value>
+                                  .bLimitBackwardEnable:=TIIB[TIXELX-EL7041]^STM Status^Status^Digital input 2</Value>
               </Property>
               <Property>
                 <Name>pytmc</Name>
@@ -36104,7 +36103,7 @@ External Setpoint Generation:
     </Value>
               </Property>
             </Properties>
-            <BitOffs>634840704</BitOffs>
+            <BitOffs>634840960</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15</Name>
@@ -36125,7 +36124,7 @@ External Setpoint Generation:
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>	.bLimitForwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 1;
-                              	.bLimitBackwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 2</Value>
+                                  .bLimitBackwardEnable:=TIIB[TIXELY-EL7041]^STM Status^Status^Digital input 2</Value>
               </Property>
               <Property>
                 <Name>pytmc</Name>
@@ -36134,7 +36133,7 @@ External Setpoint Generation:
     </Value>
               </Property>
             </Properties>
-            <BitOffs>634861952</BitOffs>
+            <BitOffs>634862208</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16</Name>
@@ -36155,7 +36154,7 @@ External Setpoint Generation:
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>	.bLimitForwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 1;
-                              	.bLimitBackwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 2</Value>
+                                  .bLimitBackwardEnable:=TIIB[TIXELZ-EL7041]^STM Status^Status^Digital input 2</Value>
               </Property>
               <Property>
                 <Name>pytmc</Name>
@@ -36164,80 +36163,95 @@ External Setpoint Generation:
     </Value>
               </Property>
             </Properties>
-            <BitOffs>634883200</BitOffs>
+            <BitOffs>634883456</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM1</Name>
             <BitSize>299392</BitSize>
             <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
-            <BitOffs>634904448</BitOffs>
+            <BitOffs>634904704</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM2</Name>
             <BitSize>299392</BitSize>
             <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
-            <BitOffs>635203840</BitOffs>
+            <BitOffs>635204096</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM3</Name>
             <BitSize>299392</BitSize>
             <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
-            <BitOffs>635503232</BitOffs>
+            <BitOffs>635503488</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM4</Name>
             <BitSize>299392</BitSize>
             <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
-            <BitOffs>635802624</BitOffs>
+            <BitOffs>635802880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM5</Name>
             <BitSize>299392</BitSize>
             <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
-            <BitOffs>636102016</BitOffs>
+            <BitOffs>636102272</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM6</Name>
             <BitSize>299392</BitSize>
             <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
-            <BitOffs>636401408</BitOffs>
+            <BitOffs>636401664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM7</Name>
             <BitSize>299392</BitSize>
             <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
-            <BitOffs>636700800</BitOffs>
+            <BitOffs>636701056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM8</Name>
             <BitSize>299392</BitSize>
             <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
-            <BitOffs>637000192</BitOffs>
+            <BitOffs>637000448</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM9</Name>
             <BitSize>299392</BitSize>
             <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
-            <BitOffs>637299584</BitOffs>
+            <BitOffs>637299840</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM14</Name>
             <Comment>...//</Comment>
             <BitSize>299392</BitSize>
             <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
-            <BitOffs>637598976</BitOffs>
+            <BitOffs>637599232</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM15</Name>
             <BitSize>299392</BitSize>
             <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
-            <BitOffs>637898368</BitOffs>
+            <BitOffs>637898624</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.fbMotionStageM16</Name>
             <BitSize>299392</BitSize>
             <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
-            <BitOffs>638197760</BitOffs>
+            <BitOffs>638198016</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Constants.bLittleEndian</Name>
+            <Comment> Does the target support an FPU</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>638497928</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.RuntimeVersion</Name>
@@ -36267,7 +36281,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>638497664</BitOffs>
+            <BitOffs>638497936</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.CompilerVersion</Name>
@@ -36297,7 +36311,36 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>638497728</BitOffs>
+            <BitOffs>638498000</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Constants.bSimulationMode</Name>
+            <Comment> Does the target support an FPU</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>0</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>638498064</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Constants.bFPUSupport</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>638498072</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.nRegisterSize</Name>
@@ -36312,7 +36355,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>638497792</BitOffs>
+            <BitOffs>638498080</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.nPackMode</Name>
@@ -36327,7 +36370,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>638497808</BitOffs>
+            <BitOffs>638498096</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.RuntimeVersionNumeric</Name>
@@ -36341,7 +36384,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>638497824</BitOffs>
+            <BitOffs>638498112</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.CompilerVersionNumeric</Name>
@@ -36355,7 +36398,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>638497856</BitOffs>
+            <BitOffs>638498144</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._AppInfo</Name>
@@ -36369,21 +36412,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>638497888</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask</Name>
-            <BitSize>32</BitSize>
-            <BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-            <Properties>
-              <Property>
-                <Name>no_init</Name>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>638499936</BitOffs>
+            <BitOffs>638498176</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._TaskInfo</Name>
@@ -36401,7 +36430,21 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>638499968</BitOffs>
+            <BitOffs>638500224</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask</Name>
+            <BitSize>32</BitSize>
+            <BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+            <Properties>
+              <Property>
+                <Name>no_init</Name>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>638501248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._TaskOid_PlcTask</Name>
@@ -36415,7 +36458,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>638500992</BitOffs>
+            <BitOffs>638501280</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList.__PlcTask</Name>
@@ -36436,7 +36479,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>638501024</BitOffs>
+            <BitOffs>638501312</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENTS.LCLSGeneralEventClass</Name>
@@ -36459,7 +36502,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>638548320</BitOffs>
+            <BitOffs>638532992</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
@@ -36531,7 +36574,7 @@ External Setpoint Generation:
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-04-17T11:47:41</Value>
+          <Value>2024-08-05T14:15:24</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
