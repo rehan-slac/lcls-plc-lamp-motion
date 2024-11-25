@@ -5,7 +5,7 @@
 			<Licenses CacheOrCheckLicensesOnStartup="true">
 				<Target>
 					<ManualSelect>{BF78CFC7-2E63-42C3-8C07-BB6C346BFB8B}</ManualSelect>
-					<LicenseDevice DongleHardwareId="4" DongleDevice="#x03020003" DongleSystemId="{A19A9D0F-F84B-C714-E580-8A762B6067AA}"/>
+					<LicenseDevice DongleHardwareId="2" DongleDevice="#x03020003" DongleSystemId="{A19A9D0F-F84B-C714-E580-8A762B6067AA}"/>
 				</Target>
 			</Licenses>
 			<Tasks>
