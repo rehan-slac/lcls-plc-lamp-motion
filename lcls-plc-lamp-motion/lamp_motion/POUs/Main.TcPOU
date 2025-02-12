@@ -129,17 +129,18 @@ VAR
     fbMotionStageM14	: FB_MotionStage;
     fbMotionStageM15	: FB_MotionStage;
     fbMotionStageM16	: FB_MotionStage;
+	fbMotionStageM2EPS : FB_EPS;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Hardware Enable
 // Gas Jet
 M1.bHardwareEnable	:= TRUE;
 M3.bHardwareEnable	:= TRUE;
-
-(*M2.bHardwareEnable	:= xLAMP_GJ_VRC_01_OPEN_LS; *)
-
+//Gas needle Y has EPS with lamp-vac
 M2.bHardwareEnable	:= TRUE;
-
+fbMotionStageM2EPS(eps:=M2.stEPSForwardEnable);
+fbMotionStageM2EPS.setMessage('LAMP_GJ_VRC_01 is close');
+fbMotionStageM2EPS.setBit(0,xLAMP_GJ_VRC_01_OPEN_LS);
 
 fbMotionStageM1(stMotionStage:=M1);
 fbMotionStageM2(stMotionStage:=M2);
