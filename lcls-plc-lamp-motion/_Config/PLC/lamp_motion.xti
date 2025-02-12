@@ -2649,6 +2649,32 @@ External Setpoint Generation:
 						</Comment>
 					</SubVar>
 				</Var>
+				<Var>
+					<Name>GVL_PLC_Interfaces.xEcatBridge_TxPDO_state</Name>
+					<Comment>
+						<![CDATA[ETHERCAT BRRIDGE COM STATUS
+0: Other side is in OP state, >0: Error]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PLC_Interfaces.xEcatBridge_External_device_not_connected</Name>
+					<Comment>
+						<![CDATA[0: External device connectd, 1: External device not connected]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PLC_Interfaces.xEcatBridge_WcState</Name>
+					<Comment>
+						<![CDATA[0 = Data valid, 1 = Data invalid]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PLC_Interfaces.xLAMP_GJ_VRC_01_OPEN_LS</Name>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
@@ -2832,6 +2858,10 @@ External Setpoint Generation:
 					<Name>Main.fbMotionStageM16.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
+				<Var>
+					<Name>GVL_PLC_Interfaces.xLAMP_GJY_OUT</Name>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
 				<Name>PlcTask Retains</Name>
@@ -2952,6 +2982,12 @@ External Setpoint Generation:
 	</Project>
 	<Mappings>
 		<OwnerA Name="lamp_motion Instance">
+			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^LAMP_MOTION_E03_EL6695">
+				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.xEcatBridge_TxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.xEcatBridge_WcState" VarB="WcState^WcState" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.xLAMP_GJ_VRC_01_OPEN_LS" VarB="IO Inputs^LAMP_GJ_VRC_01_OPEN_LS"/>
+				<Link VarA="PlcTask Outputs^GVL_PLC_Interfaces.xLAMP_GJY_OUT" VarB="IO Outputs^LAMP_GJY_OUT"/>
+			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^PLC Junction 1 (EK1122)^TIXEL (EK1100)^TIXELX-EL7041">
 				<Link VarA="PlcTask Inputs^Main.M14.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M14.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
@@ -2967,6 +3003,9 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^PLC Junction 1 (EK1122)^X1 AtmosphereMotion (EK1100)^GasJetX-EL7041">
 				<Link VarA="PlcTask Inputs^Main.M1.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M1.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^PLC Junction 1 (EK1122)^X1 AtmosphereMotion (EK1100)^GasJetY-Brake-EL2004">
+				<Link VarA="PlcTask Outputs^Main.M2.bBrakeRelease" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^PLC Junction 1 (EK1122)^X1 AtmosphereMotion (EK1100)^GasJetY-EL7041">
 				<Link VarA="PlcTask Inputs^Main.M2.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>

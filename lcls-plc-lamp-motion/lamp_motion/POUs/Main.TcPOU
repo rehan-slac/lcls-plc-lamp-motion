@@ -17,6 +17,7 @@ VAR
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 2;
                               .bLimitBackwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 1;
+							  .bBrakeRelease        :=TIIB[GasJetY-Brake-EL2004]^Channel 1^Output;
                               .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 2^Position'}
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:02
@@ -133,8 +134,12 @@ END_VAR]]></Declaration>
       <ST><![CDATA[// Hardware Enable
 // Gas Jet
 M1.bHardwareEnable	:= TRUE;
-M2.bHardwareEnable	:= TRUE;
 M3.bHardwareEnable	:= TRUE;
+
+(*M2.bHardwareEnable	:= xLAMP_GJ_VRC_01_OPEN_LS; *)
+
+M2.bHardwareEnable	:= TRUE;
+
 
 fbMotionStageM1(stMotionStage:=M1);
 fbMotionStageM2(stMotionStage:=M2);
