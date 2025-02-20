@@ -17,13 +17,14 @@ VAR
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 2;
                               .bLimitBackwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 1;
-							  .bBrakeRelease        :=TIIB[GasJetY-Brake-EL2004]^Channel 1^Output;
+                              .bBrakeRelease        :=TIIB[GasJetY-Brake-EL2004]^Channel 1^Output;
                               .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 2^Position'}
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:02
     '}
     M2		: DUT_MotionStage := (bPowerSelf:=TRUE,
     nEnableMode:=ENUM_StageEnableMode.DURING_MOTION,
+    nBrakeMode:=ENUM_StageBrakeMode.IF_ENABLED,
 //    nEnableMode:=ENUM_StageEnableMode.ALWAYS,
     nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // Gas Jet Y
 
@@ -129,7 +130,7 @@ VAR
     fbMotionStageM14	: FB_MotionStage;
     fbMotionStageM15	: FB_MotionStage;
     fbMotionStageM16	: FB_MotionStage;
-	fbMotionStageM2EPS : FB_EPS;
+    fbMotionStageM2EPS : FB_EPS;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Hardware Enable
