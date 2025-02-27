@@ -15,8 +15,8 @@ VAR
 //    nEnableMode:=ENUM_StageEnableMode.ALWAYS,
     nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // Gas Jet X
 
-    {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 2;
-                              .bLimitBackwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 1;
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 2;
                               .bBrakeRelease        :=TIIB[GasJetY-Brake-EL2004]^Channel 1^Output;
                               .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 2^Position'}
     {attribute 'pytmc' := '
@@ -142,6 +142,9 @@ M2.bHardwareEnable	:= TRUE;
 fbMotionStageM2EPS(eps:=M2.stEPSForwardEnable);
 fbMotionStageM2EPS.setMessage('LAMP_GJ_VRC_01 is close');
 fbMotionStageM2EPS.setBit(0,xLAMP_GJ_VRC_01_OPEN_LS);
+fbMotionStageM2EPS.setBit(1,NOT(xEcatBridge_External_device_not_connected));
+xLAMP_GJY_OUT := NOT(M2.bLimitBackwardEnable);
+//xLAMP_GJY_OUT := M2.stAxisStatus.fActPosition > 500;
 
 fbMotionStageM1(stMotionStage:=M1);
 fbMotionStageM2(stMotionStage:=M2);
