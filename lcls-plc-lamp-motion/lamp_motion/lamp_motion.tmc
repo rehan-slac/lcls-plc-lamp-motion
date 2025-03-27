@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{2ADB7EAE-A57A-6854-0BBF-F385CFA46138}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{C33F41EB-2716-6320-FA92-4A9F68F8D346}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General">ST_System</Name>
@@ -47131,7 +47131,7 @@ External Setpoint Generation:
                 <Name>TcLinkTo</Name>
                 <Value>.bLimitForwardEnable:=TIIB[GasJetX-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[GasJetX-EL7041]^STM Status^Status^Digital input 2;
-                              .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 1^Position</Value>
+                              .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 1 compact^Position</Value>
               </Property>
               <Property>
                 <Name>pytmc</Name>
@@ -47171,7 +47171,7 @@ External Setpoint Generation:
                 <Value>.bLimitForwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 2;
                               .bBrakeRelease        :=TIIB[GasJetY-Brake-EL2004]^Channel 1^Output;
-                              .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 2^Position</Value>
+                              .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 2 compact^Position</Value>
               </Property>
               <Property>
                 <Name>pytmc</Name>
@@ -48334,7 +48334,7 @@ External Setpoint Generation:
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2025-03-27T13:10:29</Value>
+          <Value>2025-03-27T13:53:22</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>

@@ -6,7 +6,7 @@ VAR
     // Motors
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetX-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[GasJetX-EL7041]^STM Status^Status^Digital input 2;
-                              .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 1^Position'}
+                              .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 1 compact^Position'}
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:01
     '}
@@ -18,7 +18,7 @@ VAR
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 2;
                               .bBrakeRelease        :=TIIB[GasJetY-Brake-EL2004]^Channel 1^Output;
-                              .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 2^Position'}
+                              .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 2 compact^Position'}
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:02
     '}
@@ -50,7 +50,8 @@ VAR
     nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // Gas Needle X
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 2'}
+                              .bLimitBackwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 2';
+                              .nRawEncoderULINT     := TIIB[GasNeedleYZ-EL5042]^FB Inputs Channel 1^Position'}
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:05
     '}
