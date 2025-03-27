@@ -140,7 +140,7 @@ M3.bHardwareEnable	:= TRUE;
 //Gas needle Y has EPS with lamp-vac
 M2.bHardwareEnable	:= TRUE;
 fbMotionStageM2EPS(eps:=M2.stEPSBackwardEnable);
-fbMotionStageM2EPS.setMessage('LAMP_GJ_VRC_01 is close');
+fbMotionStageM2EPS.setMessage('LAMP_GJ_VRC_01 is close; Ecat_OK');
 fbMotionStageM2EPS.setBit(0,xLAMP_GJ_VRC_01_OPEN_LS);
 fbMotionStageM2EPS.setBit(1,NOT(xEcatBridge_External_device_not_connected));
 xLAMP_GJY_OUT := NOT(M2.bLimitForwardEnable) AND M2.stAxisStatus.fActPosition > 733;
