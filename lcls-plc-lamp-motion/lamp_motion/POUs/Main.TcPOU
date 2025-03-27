@@ -5,8 +5,8 @@
 VAR
     // Motors
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetX-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[GasJetX-EL7041]^STM Status^Status^Digital input 2'}
- //                             .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 1^Position'}
+                              .bLimitBackwardEnable:=TIIB[GasJetX-EL7041]^STM Status^Status^Digital input 2;
+                              .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 1^Position'}
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:01
     '}
