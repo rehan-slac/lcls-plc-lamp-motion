@@ -51,7 +51,7 @@ VAR
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 2';
-                              .nRawEncoderULINT     := TIIB[GasNeedleYZ-EL5042]^FB Inputs Channel 1^Position'}
+                              .nRawEncoderULINT:=<0,32,0>TIIB[GasNeedleYZ-EL5042]^FB Inputs Channel 1 compact^Position'}
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:05
     '}
@@ -144,7 +144,8 @@ fbMotionStageM2EPS(eps:=M2.stEPSBackwardEnable);
 fbMotionStageM2EPS.setMessage('LAMP_GJ_VRC_01 is close; Ecat_OK');
 fbMotionStageM2EPS.setBit(0,xLAMP_GJ_VRC_01_OPEN_LS);
 fbMotionStageM2EPS.setBit(1,NOT(xEcatBridge_External_device_not_connected));
-xLAMP_GJY_OUT := NOT(M2.bLimitForwardEnable) AND M2.stAxisStatus.fActPosition > 733;
+
+xLAMP_GJY_OUT := NOT(M2.bLimitForwardEnable) AND M2.stAxisStatus.fActPosition > 733 ;
 
 
 fbMotionStageM1(stMotionStage:=M1);
