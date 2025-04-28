@@ -5,8 +5,8 @@
 VAR
     // Motors
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetX-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[GasJetX-EL7041]^STM Status^Status^Digital input 2'}
- //                             .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 1^Position'}
+                              .bLimitBackwardEnable:=TIIB[GasJetX-EL7041]^STM Status^Status^Digital input 2;
+                              .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 1 compact^Position'}
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:01
     '}
@@ -15,14 +15,16 @@ VAR
 //    nEnableMode:=ENUM_StageEnableMode.ALWAYS,
     nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // Gas Jet X
 
-    {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 2;
-                              .bLimitBackwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 1;
-                              .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 2^Position'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 2;
+                              .bBrakeRelease        :=TIIB[GasJetY-Brake-EL2004]^Channel 1^Output;
+                              .nRawEncoderULINT     := TIIB[GasJetXY-EL5042]^FB Inputs Channel 2 compact^Position'}
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:02
     '}
     M2		: DUT_MotionStage := (bPowerSelf:=TRUE,
     nEnableMode:=ENUM_StageEnableMode.DURING_MOTION,
+    nBrakeMode:=ENUM_StageBrakeMode.IF_ENABLED,
 //    nEnableMode:=ENUM_StageEnableMode.ALWAYS,
     nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // Gas Jet Y
 
@@ -48,7 +50,8 @@ VAR
     nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // Gas Needle X
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 2'}
+                              .bLimitBackwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 2';
+                              .nRawEncoderULINT:=<0,32,0>TIIB[GasNeedleYZ-EL5042]^FB Inputs Channel 1 compact^Position'}
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:05
     '}
@@ -128,13 +131,22 @@ VAR
     fbMotionStageM14	: FB_MotionStage;
     fbMotionStageM15	: FB_MotionStage;
     fbMotionStageM16	: FB_MotionStage;
+    fbMotionStageM2EPS : FB_EPS;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Hardware Enable
 // Gas Jet
 M1.bHardwareEnable	:= TRUE;
-M2.bHardwareEnable	:= TRUE;
 M3.bHardwareEnable	:= TRUE;
+//Gas needle Y has EPS with lamp-vac
+M2.bHardwareEnable	:= TRUE;
+fbMotionStageM2EPS(eps:=M2.stEPSBackwardEnable);
+fbMotionStageM2EPS.setMessage('LAMP_GJ_VRC_01 is close; Ecat_OK');
+fbMotionStageM2EPS.setBit(0,xLAMP_GJ_VRC_01_OPEN_LS);
+fbMotionStageM2EPS.setBit(1,NOT(xEcatBridge_External_device_not_connected));
+
+xLAMP_GJY_OUT := NOT(M2.bLimitForwardEnable) AND M2.stAxisStatus.fActPosition > 733 ;
+
 
 fbMotionStageM1(stMotionStage:=M1);
 fbMotionStageM2(stMotionStage:=M2);
