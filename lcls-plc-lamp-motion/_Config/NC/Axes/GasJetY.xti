@@ -1351,11 +1351,12 @@ External Setpoint Generation:
 		<Name>__FILENAME__</Name>
 		<AxisPara>
 			<Dynamic Acceleration="2" Deceleration="2" DelayTime="0.008"/>
-			<Velo Maximum="1"/>
+			<Velo RefSearch="1" RefSync="1" SlowManual="0.5" FastManual="1" Maximum="8"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="19">
 			<EncPara ScaleFactorNumerator="5e-05" MaxCount="#xffffffff">
+				<SoftEndMaxControl Enable="true" Range="735"/>
 				<Inc RefSoftSyncMask="#x0000ffff"/>
 			</EncPara>
 			<Vars VarGrpType="1">
@@ -1425,7 +1426,7 @@ External Setpoint Generation:
 		</Encoder>
 		<Drive Name="Drive" DrvType="24">
 			<DrvPara>
-				<Analog VeloReferenz="5" ScaleFactorActTorque="0.1"/>
+				<Analog VeloReferenz="10" ScaleFactorActTorque="0.1"/>
 				<TimeComp TaskDelayCycles="1"/>
 			</DrvPara>
 			<Vars VarGrpType="1">
@@ -1516,6 +1517,7 @@ Drive Status 4 (manually linked):
 		<Controller Name="Ctrl" CtrType="1">
 			<CtrPara PriorControlFactor="1">
 				<PosDiffControl Range="0.8"/>
+				<PID PosKp="2"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
 		</Controller>

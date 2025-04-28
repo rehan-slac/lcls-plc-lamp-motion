@@ -13,8 +13,11 @@
 		<Box File="GasJetY-EL7041.xti" Id="8">
 			<EtherCAT PortABoxInfo="#x01000007"/>
 		</Box>
-		<Box File="GasJetZ-EL7041.xti" Id="9">
+		<Box File="GasJetY-Brake-EL2004.xti" Id="35">
 			<EtherCAT PortABoxInfo="#x01000008"/>
+		</Box>
+		<Box File="GasJetZ-EL7041.xti" Id="9">
+			<EtherCAT PortABoxInfo="#x01000023"/>
 		</Box>
 		<Box File="GasNeedleX-EL7041.xti" Id="10">
 			<EtherCAT PortABoxInfo="#x01000009"/>
@@ -28,11 +31,8 @@
 		<Box File="FlowCellTheta-EL7041.xti" Id="40">
 			<EtherCAT PortABoxInfo="#x0100000c"/>
 		</Box>
-		<Box File="Microscope-EL7342.xti" Id="13">
-			<EtherCAT PortABoxInfo="#x01000028"/>
-		</Box>
 		<Box File="GasJetXY-EL5042.xti" Id="14">
-			<EtherCAT PortABoxInfo="#x0100000d"/>
+			<EtherCAT PortABoxInfo="#x01000028"/>
 		</Box>
 		<Box File="GasJetZGasNeedleX-EL5042.xti" Id="15">
 			<EtherCAT PortABoxInfo="#x0100000e"/>
