@@ -41,7 +41,7 @@ VAR
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleX-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[GasNeedleX-EL7041]^STM Status^Status^Digital input 2';
-							  .nRawEncoderULINT     := TIIB[GasJetZGasNeedleX-EL5042]^FB Inputs Channel 2^Position'}
+                              .nRawEncoderULINT     := TIIB[GasJetZGasNeedleX-EL5042]^FB Inputs Channel 2^Position'}
 
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:04
@@ -64,7 +64,7 @@ VAR
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 2'}
-	{attribute 'TcLinkTo' := '.nRawEncoderULINT:=<0,32,0>TIIB[GasNeedleYZ-EL5042]^FB Inputs Channel 2 compact^Position'}
+    {attribute 'TcLinkTo' := '.nRawEncoderULINT:=<0,32,0>TIIB[GasNeedleYZ-EL5042]^FB Inputs Channel 2 compact^Position'}
 
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:06
@@ -186,9 +186,5 @@ fbMotionStageM16(stMotionStage:=M16);
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="Main">
-      <LineId Id="3" Count="45" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
