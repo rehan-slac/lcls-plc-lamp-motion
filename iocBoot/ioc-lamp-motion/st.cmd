@@ -1,11 +1,11 @@
-#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.6.1/bin/rhel7-x86_64/adsIoc
+#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.8.0/bin/rhel7-x86_64/adsIoc
 ################### AUTO-GENERATED DO NOT EDIT ###################
 #
 #         Project: lcls-plc-lamp-motion.tsproj
 #        PLC name: lamp_motion (lamp_motion Instance)
-# Generated using: pytmc 2.16.0
-# Project version: 0d3b914
-#    Project hash: 0d3b9149f7d9723e53dcd1a8301d787de83e1a16
+# Generated using: pytmc 2.17.0
+# Project version: 9931277
+#    Project hash: 99312779b5115f1327964eb8eba6dcd762331ece
 #     PLC IP/host: 172.21.132.58
 #      PLC Net ID: 172.21.132.58.1.1
 #  ** Production mode IOC **
@@ -13,6 +13,8 @@
 #
 # Libraries:
 #
+#   LCLS General: * -> 2.12.0 (SLAC)
+#   lcls-twincat-motion: * -> 4.2.0 (SLAC)
 #   Tc2_MC2: * (Beckhoff Automation GmbH)
 #   Tc2_Standard: * (Beckhoff Automation GmbH)
 #   Tc2_System: * (Beckhoff Automation GmbH)
@@ -24,7 +26,7 @@
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
-epicsEnvSet("ENGINEER", "jozamudi" )
+epicsEnvSet("ENGINEER", "rnazir" )
 epicsEnvSet("LOCATION", "PLC:LAMP:MOTION" )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
@@ -40,7 +42,7 @@ epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
 epicsEnvSet("IPADDR",           "172.21.132.58")
 epicsEnvSet("AMSID",            "172.21.132.58.1.1")
 epicsEnvSet("AMS_PORT",         "851")
-epicsEnvSet("ADS_MAX_PARAMS",   "1736")
+epicsEnvSet("ADS_MAX_PARAMS",   "1559")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
 epicsEnvSet("ADS_MAX_DELAY_MS", "100")
 epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
@@ -296,11 +298,15 @@ dbLoadRecords("save_restoreStatus.db", "P=PLC:LAMP:MOTION:")
 dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 
 ## TwinCAT task, application, and project information databases ##
-dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:LAMP:MOTION,IDX=1")
+dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:LAMP:MOTION,IDX=1,TASK_PORT=350")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:LAMP:MOTION")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:LAMP:MOTION,PROJECT=lcls-plc-lamp-motion.tsproj,HASH=0d3b914,VERSION=0d3b914,PYTMC=2.16.0,PLC_HOST=172.21.132.58")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:LAMP:MOTION,PROJECT=lcls-plc-lamp-motion.tsproj,HASH=9931277,VERSION=9931277,PYTMC=2.17.0,PLC_HOST=172.21.132.58")
 
+#   LCLS General: * -> 2.12.0 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:LAMP:MOTION,DEPENDENCY=LCLS_General,VERSION=2.12.0,VENDOR=SLAC")
+#   lcls-twincat-motion: * -> 4.2.0 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:LAMP:MOTION,DEPENDENCY=lcls-twincat-motion,VERSION=4.2.0,VENDOR=SLAC")
 #   Tc2_MC2: * (Beckhoff Automation GmbH)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:LAMP:MOTION,DEPENDENCY=Tc2_MC2,VERSION=*,VENDOR=Beckhoff Automation GmbH")
 #   Tc2_Standard: * (Beckhoff Automation GmbH)
@@ -317,8 +323,8 @@ cd "$(IOC_TOP)"
 ## PLC Project Database files ##
 dbLoadRecords("lamp_motion.db", "PORT=$(ASYN_PORT),PREFIX=PLC:LAMP:MOTION:,IOCNAME=$(IOC),IOC=$(IOC)")
 
-# Total records: 736
-callbackSetQueueSize(3472)
+# Total records: 559
+callbackSetQueueSize(3118)
 
 # Autosave and archive settings:
 save_restoreSet_status_prefix("PLC:LAMP:MOTION:")

@@ -40,7 +40,9 @@ VAR
     nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // Gas Jet Z
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleX-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[GasNeedleX-EL7041]^STM Status^Status^Digital input 2'}
+                              .bLimitBackwardEnable:=TIIB[GasNeedleX-EL7041]^STM Status^Status^Digital input 2';
+                              .nRawEncoderULINT     := TIIB[GasJetZGasNeedleX-EL5042]^FB Inputs Channel 2^Position'}
+
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:04
     '}
@@ -60,8 +62,10 @@ VAR
 //    nEnableMode:=ENUM_StageEnableMode.ALWAYS,
     nHomingMode := ENUM_EpicsHomeCmd.ABSOLUTE_SET); // Gas Needle Y
 
-    {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 2;
-                              .bLimitBackwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 1'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 2'}
+    {attribute 'TcLinkTo' := '.nRawEncoderULINT:=<0,32,0>TIIB[GasNeedleYZ-EL5042]^FB Inputs Channel 2 compact^Position'}
+
     {attribute 'pytmc' := '
         pv: TMO:LAMP:MMS:06
     '}
